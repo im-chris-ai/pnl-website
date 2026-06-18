@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* Colors */
+  --color-primary: #0a0a0a;
+  --color-primary-active: #1f1f1f;
+  --color-primary-disabled: #e5e5e5;
+  --color-ink: #0a0a0a;
+  --color-body: #3a3a3a;
+  --color-body-strong: #1a1a1a;
+  --color-muted: #6a6a6a;
+  --color-muted-soft: #9a9a9a;
+  --color-hairline: #e5e5e5;
+  --color-hairline-soft: #f0f0f0;
+  --color-canvas: #fffaf0;
+  --color-surface-soft: #faf5e8;
+  --color-surface-card: #f5f0e0;
+  --color-surface-strong: #ebe6d6;
+  --color-surface-dark: #0a1a1a;
+  --color-surface-dark-elevated: #1a2a2a;
+  --color-on-primary: #ffffff;
+  --color-on-dark: #ffffff;
+  --color-on-dark-soft: #a0a0a0;
+  --color-brand-pink: #ff4d8b;
+  --color-brand-teal: #1a3a3a;
+  --color-brand-lavender: #b8a4ed;
+  --color-brand-peach: #ffb084;
+  --color-brand-ochre: #e8b94a;
+  --color-brand-mint: #a4d4c5;
+  --color-brand-coral: #ff6b5a;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+
+  /* Fonts */
+  --font-display: "Plain Black", "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Typography Scale */
+  --text-display-xl-size: clamp(3rem, 7vw, 4.5rem);
+  --text-display-xl-lh: 1;
+  --text-display-xl-ls: -2.5px;
+  
+  --text-display-lg-size: clamp(2.5rem, 5vw, 3.5rem);
+  --text-display-lg-lh: 1.05;
+  --text-display-lg-ls: -2px;
+
+  --text-display-md-size: clamp(2rem, 4vw, 2.5rem);
+  --text-display-md-lh: 1.1;
+  --text-display-md-ls: -1px;
+
+  --text-display-sm-size: clamp(1.75rem, 3vw, 2rem);
+  --text-display-sm-lh: 1.15;
+  --text-display-sm-ls: -0.5px;
+
+  --text-title-lg-size: 24px;
+  --text-title-md-size: 18px;
+  --text-title-sm-size: 16px;
+  --text-body-md-size: 16px;
+  --text-body-sm-size: 14px;
+  --text-caption-size: 13px;
+  --text-caption-uppercase-size: 12px;
+
+  /* Border Radius */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+
+  /* Spacing */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-section: 96px;
+  
+  /* Layout */
+  --container-max: 1280px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-canvas);
+  color: var(--color-body);
+  font-size: var(--text-body-md-size);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+h1 {
+  font-size: var(--text-display-xl-size);
+  line-height: var(--text-display-xl-lh);
+  letter-spacing: var(--text-display-xl-ls);
+}
+
+h2 {
+  font-size: var(--text-display-lg-size);
+  line-height: var(--text-display-lg-lh);
+  letter-spacing: var(--text-display-lg-ls);
+}
+
+h3 {
+  font-size: var(--text-display-md-size);
+  line-height: var(--text-display-md-lh);
+  letter-spacing: var(--text-display-md-ls);
+}
+
+h4 {
+  font-size: var(--text-display-sm-size);
+  line-height: var(--text-display-sm-lh);
+  letter-spacing: var(--text-display-sm-ls);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+}
+
+a {
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+/* Base Component Classes */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 20px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-active);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 20px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-hairline);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-ink);
+}
+
+.section {
+  padding: var(--spacing-section) 0;
+}

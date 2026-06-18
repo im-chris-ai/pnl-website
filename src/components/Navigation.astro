@@ -1,0 +1,80 @@
+---
+// src/components/Navigation.astro
+---
+
+<header class="top-nav">
+  <div class="container nav-container">
+    <a href="/" class="logo">
+      <img src="/logo.svg" alt="Pixa Nova Labs Logo" class="logo-image" />
+      <span class="logo-text">Pixa Nova Labs</span>
+    </a>
+    
+    <nav class="nav-links">
+      <a href="/">Products</a>
+      <a href="/blog">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+    
+    <div class="nav-actions">
+      <a href="/contact" class="btn-primary">Contact Us</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .top-nav {
+    height: 64px;
+    background-color: var(--color-canvas);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--color-hairline);
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .logo-image {
+    height: 36px;
+    width: auto;
+  }
+
+  .logo-text {
+    letter-spacing: -0.5px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-ink);
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--color-brand-pink);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links, .nav-actions {
+      display: none; /* In a real app, implement hamburger menu here */
+    }
+  }
+</style>

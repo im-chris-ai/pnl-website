@@ -1,0 +1,133 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getCollection('blog');
+  
+  // Sort posts by date descending
+  allPosts.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
+
+  // Generate pages (6 posts per page)
+  return paginate(allPosts, { pageSize: 6 });
+}
+
+const { page } = Astro.props;
+---
+
+<Layout 
+  title={`Blog - Page ${page.currentPage}`}
+  description="Read the latest news and updates from Pixa Nova Labs."
+>
+  <div class="container section">
+    <div class="blog-header">
+      <h1>The Pixa Nova Blog</h1>
+      <p class="lead">Insights, updates, and deep dives from our engineering and design teams.</p>
+    </div>
+
+    <div class="blog-grid">
+      {page.data.map((post) => (
+        <article class="blog-card">
+          <div class="blog-card-content">
+            <span class="blog-date">{new Date(post.data.date).toLocaleDateString()}</span>
+            <h2>{post.data.title}</h2>
+            <p>{post.data.description}</p>
+            <a href={`/blog/${post.id}`} class="text-link">Read more &rarr;</a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="pagination">
+      {page.url.prev ? <a href={page.url.prev} class="btn-secondary">&larr; Previous Page</a> : <div></div>}
+      <span class="page-info">Page {page.currentPage} of {page.lastPage}</span>
+      {page.url.next ? <a href={page.url.next} class="btn-secondary">Next Page &rarr;</a> : <div></div>}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .blog-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xxl);
+  }
+
+  .blog-header h1 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .blog-header .lead {
+    font-size: var(--text-title-md-size);
+    color: var(--color-muted);
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xxl);
+  }
+
+  .blog-card {
+    background-color: var(--color-surface-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .blog-date {
+    font-size: var(--text-caption-uppercase-size);
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--color-muted);
+    margin-bottom: var(--spacing-sm);
+    display: block;
+    text-transform: uppercase;
+  }
+
+  .blog-card h2 {
+    font-size: var(--text-title-lg-size);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .blog-card p {
+    color: var(--color-body);
+    margin-bottom: var(--spacing-md);
+    flex-grow: 1;
+  }
+
+  .text-link {
+    color: var(--color-ink);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--color-hairline);
+    padding-top: var(--spacing-xl);
+  }
+
+  .page-info {
+    font-weight: 500;
+    color: var(--color-muted);
+  }
+
+  @media (max-width: 768px) {
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+    .pagination {
+      flex-direction: column;
+      gap: var(--spacing-md);
+    }
+  }
+</style>

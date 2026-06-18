@@ -1,0 +1,233 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Home" 
+  description="Pixa Nova Labs - Building vibrant, fast, and powerful digital products."
+>
+  <section class="hero-band">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1>Go to market with powerful tools</h1>
+        <p class="lead">We build the most playful and robust digital products, browser extensions, and web applications in the industry. Everything you need to supercharge your workflow.</p>
+        <div class="hero-actions">
+          <a href="/products" class="btn-primary">Explore Products</a>
+          <a href="/contact" class="btn-secondary">Book a demo</a>
+        </div>
+      </div>
+      <div class="hero-illustration">
+        <div class="hero-illustration-card">
+          <!-- Placeholder for 3D claymation illustration -->
+          <div class="illustration-placeholder">
+            <span>✨</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="feature-header">
+        <h2>Our ecosystem</h2>
+        <p>A suite of applications designed to work together seamlessly.</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card feature-card-pink">
+          <h3>Nova Sequencer</h3>
+          <p>Automate your outreach with dynamic workflows and deep personalization.</p>
+          <div class="mockup-fragment">Run logs initialized...</div>
+        </div>
+        
+        <div class="feature-card feature-card-teal">
+          <h3>Pixa Analytics</h3>
+          <p>Enterprise-grade data enrichment running in the background.</p>
+          <div class="mockup-fragment">Enrichment: 100% complete</div>
+        </div>
+        
+        <div class="feature-card feature-card-lavender">
+          <h3>AI Agents</h3>
+          <p>Deploy intelligent assistants to handle repetitive CRM tasks.</p>
+          <div class="mockup-fragment">Agent running...</div>
+        </div>
+        
+        <div class="feature-card feature-card-peach">
+          <h3>Browser Extension</h3>
+          <p>Bring the power of Pixa Nova directly into your browser tab.</p>
+          <div class="mockup-fragment">Ext connected.</div>
+        </div>
+        
+        <div class="feature-card feature-card-ochre">
+          <h3>Community Hub</h3>
+          <p>Connect with experts and share your custom workflows.</p>
+          <div class="mockup-fragment">12 new templates</div>
+        </div>
+
+        <div class="feature-card feature-card-cream">
+          <h3>Custom Solutions</h3>
+          <p>Need something specific? We build custom tools for enterprise.</p>
+          <div class="mockup-fragment">Contact engineering</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section pre-footer">
+    <div class="container">
+      <div class="cta-band-illustrated">
+        <h2>Turn your ideas into reality today.</h2>
+        <p>Join hundreds of businesses supercharging their growth.</p>
+        <a href="/contact" class="btn-primary">Get started free</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hero */
+  .hero-band {
+    padding: var(--spacing-section) 0;
+    background-color: var(--color-canvas);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: var(--spacing-xxl);
+    align-items: center;
+  }
+
+  .hero-content h1 {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .hero-content .lead {
+    font-size: var(--text-title-md-size);
+    color: var(--color-body-strong);
+    margin-bottom: var(--spacing-xl);
+    max-width: 600px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: var(--spacing-md);
+  }
+
+  .hero-illustration-card {
+    background-color: var(--color-surface-soft);
+    border-radius: var(--radius-xl);
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .illustration-placeholder {
+    font-size: 80px;
+  }
+
+  /* Feature Grid */
+  .feature-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xxl);
+    max-width: 600px;
+    margin-inline: auto;
+  }
+  
+  .feature-header h2 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .feature-card {
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .feature-card h3 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .feature-card p {
+    margin-bottom: var(--spacing-xl);
+    flex-grow: 1;
+  }
+
+  .mockup-fragment {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-family: monospace;
+    font-size: var(--text-caption-size);
+    border: 1px solid var(--color-hairline);
+  }
+
+  /* Feature Colors */
+  .feature-card-pink {
+    background-color: var(--color-brand-pink);
+    color: var(--color-on-primary);
+  }
+  .feature-card-pink h3, .feature-card-pink p { color: var(--color-on-primary); }
+  
+  .feature-card-teal {
+    background-color: var(--color-brand-teal);
+    color: var(--color-on-dark);
+  }
+  .feature-card-teal h3, .feature-card-teal p { color: var(--color-on-dark); }
+  
+  .feature-card-lavender {
+    background-color: var(--color-brand-lavender);
+    color: var(--color-ink);
+  }
+  .feature-card-peach {
+    background-color: var(--color-brand-peach);
+    color: var(--color-ink);
+  }
+  .feature-card-ochre {
+    background-color: var(--color-brand-ochre);
+    color: var(--color-ink);
+  }
+  .feature-card-cream {
+    background-color: var(--color-surface-card);
+    color: var(--color-ink);
+  }
+
+  /* CTA Band */
+  .cta-band-illustrated {
+    background-color: var(--color-surface-soft);
+    border-radius: var(--radius-xl);
+    padding: 80px;
+    text-align: center;
+  }
+
+  .cta-band-illustrated h2 {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .cta-band-illustrated p {
+    font-size: var(--text-title-md-size);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .feature-grid { grid-template-columns: 1fr; }
+    .cta-band-illustrated { padding: 40px var(--spacing-lg); }
+  }
+</style>

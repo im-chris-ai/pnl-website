@@ -1,0 +1,50 @@
+---
+// src/components/Footer.astro
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer-container">
+    <p>&copy; {year} Pixa Nova Labs. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="https://twitter.com/pixanovalabs">Twitter</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--color-surface-soft);
+    padding: 80px 0;
+    color: var(--color-body);
+    font-size: var(--text-body-sm-size);
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer p {
+    margin: 0;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .footer-links a {
+    color: var(--color-body);
+    transition: color 0.2s ease;
+  }
+
+  .footer-links a:hover {
+    color: var(--color-ink);
+  }
+</style>
