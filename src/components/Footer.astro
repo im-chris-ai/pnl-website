@@ -1,50 +1,77 @@
 ---
-// src/components/Footer.astro
+// Footer.astro
 const year = new Date().getFullYear();
 ---
 
 <footer class="footer">
-  <div class="container footer-container">
-    <p>&copy; {year} Pixa Nova Labs. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="/privacy">Privacy Policy</a>
-      <a href="/terms">Terms of Service</a>
-      <a href="https://twitter.com/pixanovalabs">Twitter</a>
+  <hr class="divider" />
+  <div class="container footer__inner">
+
+    <div class="footer__brand">
+      <span class="footer__name">Pixa Nova Labs</span>
+      <p class="footer__copy">&copy; {year}. All rights reserved.</p>
     </div>
+
+    <nav class="footer__nav" aria-label="Footer navigation">
+      <a href="/blog">Blog</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+
   </div>
 </footer>
 
 <style>
   .footer {
-    background-color: var(--color-surface-soft);
-    padding: 80px 0;
-    color: var(--color-body);
-    font-size: var(--text-body-sm-size);
+    background-color: var(--color-surface);
+    padding-bottom: var(--space-10);
   }
 
-  .footer-container {
+  .divider {
+    margin-bottom: var(--space-10);
+  }
+
+  .footer__inner {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
     flex-wrap: wrap;
-    gap: 24px;
   }
 
-  .footer p {
+  .footer__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .footer__name {
+    font-family: var(--font-serif);
+    font-size: 0.9rem;
+    font-weight: var(--weight-semibold);
+    color: var(--color-primary);
+  }
+
+  .footer__copy {
+    font-size: var(--size-sm);
+    color: var(--color-secondary);
     margin: 0;
   }
 
-  .footer-links {
+  .footer__nav {
     display: flex;
-    gap: 24px;
+    gap: var(--space-6);
   }
 
-  .footer-links a {
-    color: var(--color-body);
-    transition: color 0.2s ease;
+  .footer__nav a {
+    font-size: var(--size-sm);
+    color: var(--color-secondary);
+    font-weight: var(--weight-medium);
+    transition: color 0.12s ease;
   }
+  .footer__nav a:hover { color: var(--color-primary); }
 
-  .footer-links a:hover {
-    color: var(--color-ink);
+  @media (max-width: 480px) {
+    .footer__inner { flex-direction: column; align-items: flex-start; }
   }
 </style>

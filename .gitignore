@@ -13,6 +13,9 @@ pnpm-debug.log*
 # Astro cache and generated types
 .astro/
 
+# local tooling
+.claude/
+
 # IDEs and editors
 .idea/
 .vscode/

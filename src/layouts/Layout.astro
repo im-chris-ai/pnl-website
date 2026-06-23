@@ -6,20 +6,39 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title: string;
   description: string;
+  image?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, image = '/logo.webp' } = Astro.props;
+const fullTitle = `${title} | Pixa Nova Labs`;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL(image, Astro.site).href;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/webp" href="/fafvicon.webp" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title} | Pixa Nova Labs</title>
+    <title>{fullTitle}</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pixa Nova Labs" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
   </head>
   <body>
     <Navigation />

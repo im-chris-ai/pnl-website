@@ -1,233 +1,336 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const recentPosts = allPosts
+  .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf())
+  .slice(0, 3);
 ---
 
-<Layout 
-  title="Home" 
-  description="Pixa Nova Labs - Building vibrant, fast, and powerful digital products."
+<Layout
+  title="Build with clarity"
+  description="Pixa Nova Labs. We build focused, fast, and powerful digital tools for professionals."
 >
-  <section class="hero-band">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <h1>Go to market with powerful tools</h1>
-        <p class="lead">We build the most playful and robust digital products, browser extensions, and web applications in the industry. Everything you need to supercharge your workflow.</p>
-        <div class="hero-actions">
-          <a href="/products" class="btn-primary">Explore Products</a>
-          <a href="/contact" class="btn-secondary">Book a demo</a>
-        </div>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__eyebrow label">Pixa Nova Labs</div>
+      <h1 class="hero__headline display">
+        Tools built for<br /><em>clarity</em>.
+      </h1>
+      <p class="hero__body">
+        We build focused, no-nonsense browser extensions and web apps that solve real problems for developers, creators, and teams. No bloat. No noise.
+      </p>
+      <div class="hero__actions">
+        <a href="#product" class="btn btn-primary">Explore our product</a>
+        <a href="/blog" class="btn btn-secondary">Read the blog</a>
       </div>
-      <div class="hero-illustration">
-        <div class="hero-illustration-card">
-          <!-- Placeholder for 3D claymation illustration -->
-          <div class="illustration-placeholder">
-            <span>✨</span>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ===================== PRODUCT ===================== -->
+  <section id="product" class="product-section">
+    <div class="container">
+
+      <div class="product-section__header">
+        <div class="label">Flagship Product</div>
+        <h2>Click to Censor</h2>
+        <p>
+          A lightweight browser extension that lets you instantly blur, black out, or hide any element on any webpage, in real time. Built for developers who share their screens and creators who record tutorials without exposing sensitive data.
+        </p>
+      </div>
+
+      <!-- Feature highlights -->
+      <ul class="product-features">
+        <li class="product-feature card">
+          <div class="product-feature__icon">
+            <!-- Local / Privacy -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7l-9-5Z" stroke="#0866FF" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M9 12l2 2 4-4" stroke="#0866FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
-        </div>
+          <h3>Runs 100% locally</h3>
+          <p>All processing happens in your browser. No data leaves your machine. Ever.</p>
+        </li>
+
+        <li class="product-feature card">
+          <div class="product-feature__icon">
+            <!-- Click / Interact -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18" stroke="#0866FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Click anything to hide</h3>
+          <p>Hover to highlight, click to censor. Works on text, images, tables, and more.</p>
+        </li>
+
+        <li class="product-feature card">
+          <div class="product-feature__icon">
+            <!-- Persist / Save -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z" stroke="#0866FF" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M17 21v-8H7v8M7 3v5h8" stroke="#0866FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Persists across reloads</h3>
+          <p>Censors are saved per-site by CSS selector and survive page refreshes automatically.</p>
+        </li>
+
+        <li class="product-feature card">
+          <div class="product-feature__icon">
+            <!-- Styles -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" stroke="#0866FF" stroke-width="1.8"/>
+              <path d="M12 8v4l3 3" stroke="#0866FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Three censor modes</h3>
+          <p>Blur, blackout, or fully hide an element. Switch modes on the fly.</p>
+        </li>
+      </ul>
+
+      <div class="product-section__cta">
+        <a href="#" class="btn btn-primary">Add to Chrome, it's free</a>
       </div>
+
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="feature-header">
-        <h2>Our ecosystem</h2>
-        <p>A suite of applications designed to work together seamlessly.</p>
-      </div>
+  <hr class="divider" />
 
-      <div class="feature-grid">
-        <div class="feature-card feature-card-pink">
-          <h3>Nova Sequencer</h3>
-          <p>Automate your outreach with dynamic workflows and deep personalization.</p>
-          <div class="mockup-fragment">Run logs initialized...</div>
-        </div>
-        
-        <div class="feature-card feature-card-teal">
-          <h3>Pixa Analytics</h3>
-          <p>Enterprise-grade data enrichment running in the background.</p>
-          <div class="mockup-fragment">Enrichment: 100% complete</div>
-        </div>
-        
-        <div class="feature-card feature-card-lavender">
-          <h3>AI Agents</h3>
-          <p>Deploy intelligent assistants to handle repetitive CRM tasks.</p>
-          <div class="mockup-fragment">Agent running...</div>
-        </div>
-        
-        <div class="feature-card feature-card-peach">
-          <h3>Browser Extension</h3>
-          <p>Bring the power of Pixa Nova directly into your browser tab.</p>
-          <div class="mockup-fragment">Ext connected.</div>
-        </div>
-        
-        <div class="feature-card feature-card-ochre">
-          <h3>Community Hub</h3>
-          <p>Connect with experts and share your custom workflows.</p>
-          <div class="mockup-fragment">12 new templates</div>
+  <!-- ===================== BLOG PREVIEW ===================== -->
+  {recentPosts.length > 0 && (
+    <section class="blog-preview">
+      <div class="container">
+
+        <div class="blog-preview__header">
+          <h2>From the lab</h2>
+          <a href="/blog" class="btn btn-ghost">
+            All posts &rarr;
+          </a>
         </div>
 
-        <div class="feature-card feature-card-cream">
-          <h3>Custom Solutions</h3>
-          <p>Need something specific? We build custom tools for enterprise.</p>
-          <div class="mockup-fragment">Contact engineering</div>
-        </div>
+        <ol class="blog-preview__list">
+          {recentPosts.map((post, i) => (
+            <li class="blog-preview__item">
+              <span class="blog-preview__index label">{String(i + 1).padStart(2, '0')}</span>
+              <div class="blog-preview__content">
+                <time class="blog-preview__date label" datetime={post.data.date}>
+                  {new Date(post.data.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                </time>
+                <a href={`/blog/${post.id}`} class="blog-preview__title h3">
+                  {post.data.title}
+                </a>
+                <p class="blog-preview__desc">{post.data.description}</p>
+              </div>
+              <a href={`/blog/${post.id}`} class="btn btn-secondary blog-preview__read">
+                Read
+              </a>
+            </li>
+          ))}
+        </ol>
+
       </div>
-    </div>
-  </section>
-  
-  <section class="section pre-footer">
-    <div class="container">
-      <div class="cta-band-illustrated">
-        <h2>Turn your ideas into reality today.</h2>
-        <p>Join hundreds of businesses supercharging their growth.</p>
-        <a href="/contact" class="btn-primary">Get started free</a>
-      </div>
-    </div>
-  </section>
+    </section>
+  )}
+
 </Layout>
 
 <style>
-  /* Hero */
-  .hero-band {
-    padding: var(--spacing-section) 0;
-    background-color: var(--color-canvas);
+  /* ===================== HERO ===================== */
+  .hero {
+    padding-block: var(--space-32) var(--space-20);
+    background-color: var(--color-surface);
   }
 
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 7fr 5fr;
-    gap: var(--spacing-xxl);
-    align-items: center;
+  .hero__inner {
+    max-width: 720px;
   }
 
-  .hero-content h1 {
-    margin-bottom: var(--spacing-lg);
+  .hero__eyebrow {
+    margin-bottom: var(--space-5);
   }
 
-  .hero-content .lead {
-    font-size: var(--text-title-md-size);
-    color: var(--color-body-strong);
-    margin-bottom: var(--spacing-xl);
-    max-width: 600px;
+  .hero__headline {
+    margin-bottom: var(--space-6);
   }
 
-  .hero-actions {
+  .hero__body {
+    font-size: 1.1rem;
+    max-width: 540px;
+    margin-bottom: var(--space-8);
+    color: var(--color-secondary);
+  }
+
+  .hero__actions {
     display: flex;
-    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    gap: var(--space-3);
   }
 
-  .hero-illustration-card {
-    background-color: var(--color-surface-soft);
-    border-radius: var(--radius-xl);
-    aspect-ratio: 4/3;
+  /* ===================== PRODUCT SECTION ===================== */
+  .product-section {
+    padding-block: var(--space-24);
+    background-color: var(--color-neutral);
+  }
+
+  .product-section__header {
+    max-width: 540px;
+    margin-bottom: var(--space-12);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .product-section__header h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  }
+
+  .product-section__header p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  /* Feature grid */
+  .product-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-4);
+    margin-bottom: var(--space-12);
+  }
+
+  .product-feature {
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    background-color: var(--color-surface);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+  .product-feature:hover {
+    box-shadow: 0 4px 20px rgba(28, 43, 51, 0.07);
+    transform: translateY(-2px);
+  }
+
+  .product-feature__icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(8, 102, 255, 0.06);
+    border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
   }
 
-  .illustration-placeholder {
-    font-size: 80px;
+  .product-feature h3 {
+    font-size: 1rem;
+    font-weight: var(--weight-semibold);
   }
 
-  /* Feature Grid */
-  .feature-header {
-    text-align: center;
-    margin-bottom: var(--spacing-xxl);
-    max-width: 600px;
-    margin-inline: auto;
-  }
-  
-  .feature-header h2 {
-    margin-bottom: var(--spacing-sm);
+  .product-feature p {
+    font-size: var(--size-sm);
+    color: var(--color-secondary);
+    line-height: 1.55;
+    margin: 0;
   }
 
-  .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-lg);
+  .product-section__cta {
+    display: flex;
   }
 
-  .feature-card {
-    border-radius: var(--radius-xl);
-    padding: var(--spacing-xl);
+  /* ===================== BLOG PREVIEW ===================== */
+  .blog-preview {
+    padding-block: var(--space-24);
+    background-color: var(--color-surface);
+  }
+
+  .blog-preview__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: var(--space-8);
+    gap: var(--space-4);
+  }
+
+  .blog-preview__list {
     display: flex;
     flex-direction: column;
-    height: 100%;
   }
 
-  .feature-card h3 {
-    margin-bottom: var(--spacing-sm);
+  .blog-preview__item {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr auto;
+    gap: var(--space-6);
+    align-items: start;
+    padding-block: var(--space-6);
+    border-top: 1px solid var(--color-border);
+    transition: background-color 0.12s ease;
   }
 
-  .feature-card p {
-    margin-bottom: var(--spacing-xl);
-    flex-grow: 1;
+  .blog-preview__item:last-child {
+    border-bottom: 1px solid var(--color-border);
   }
 
-  .mockup-fragment {
-    background-color: var(--color-canvas);
-    color: var(--color-ink);
-    padding: var(--spacing-md);
-    border-radius: var(--radius-md);
-    font-family: monospace;
-    font-size: var(--text-caption-size);
-    border: 1px solid var(--color-hairline);
+  .blog-preview__index {
+    padding-top: 3px;
+    color: var(--color-secondary);
   }
 
-  /* Feature Colors */
-  .feature-card-pink {
-    background-color: var(--color-brand-pink);
-    color: var(--color-on-primary);
-  }
-  .feature-card-pink h3, .feature-card-pink p { color: var(--color-on-primary); }
-  
-  .feature-card-teal {
-    background-color: var(--color-brand-teal);
-    color: var(--color-on-dark);
-  }
-  .feature-card-teal h3, .feature-card-teal p { color: var(--color-on-dark); }
-  
-  .feature-card-lavender {
-    background-color: var(--color-brand-lavender);
-    color: var(--color-ink);
-  }
-  .feature-card-peach {
-    background-color: var(--color-brand-peach);
-    color: var(--color-ink);
-  }
-  .feature-card-ochre {
-    background-color: var(--color-brand-ochre);
-    color: var(--color-ink);
-  }
-  .feature-card-cream {
-    background-color: var(--color-surface-card);
-    color: var(--color-ink);
+  .blog-preview__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
   }
 
-  /* CTA Band */
-  .cta-band-illustrated {
-    background-color: var(--color-surface-soft);
-    border-radius: var(--radius-xl);
-    padding: 80px;
-    text-align: center;
+  .blog-preview__date {
+    color: var(--color-secondary);
+    margin-bottom: var(--space-1);
   }
 
-  .cta-band-illustrated h2 {
-    margin-bottom: var(--spacing-md);
+  .blog-preview__title {
+    font-size: 1.1rem;
+    font-weight: var(--weight-semibold);
+    color: var(--color-primary);
+    font-family: var(--font-serif);
+    line-height: 1.3;
+    transition: color 0.12s ease;
   }
-  
-  .cta-band-illustrated p {
-    font-size: var(--text-title-md-size);
-    margin-bottom: var(--spacing-xl);
+  .blog-preview__title:hover { color: var(--color-tertiary); }
+
+  .blog-preview__desc {
+    font-size: var(--size-sm);
+    color: var(--color-secondary);
+    margin: 0;
+    margin-top: var(--space-1);
+    max-width: 520px;
+    line-height: 1.5;
   }
 
-  /* Responsive */
-  @media (max-width: 1024px) {
-    .hero-grid { grid-template-columns: 1fr; }
-    .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  .blog-preview__read {
+    align-self: center;
+    padding: 8px 16px;
+    font-size: var(--size-sm);
+    flex-shrink: 0;
   }
 
-  @media (max-width: 768px) {
-    .feature-grid { grid-template-columns: 1fr; }
-    .cta-band-illustrated { padding: 40px var(--spacing-lg); }
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 640px) {
+    .hero { padding-block: var(--space-20) var(--space-12); }
+
+    .blog-preview__item {
+      grid-template-columns: 2rem 1fr;
+      grid-template-rows: auto auto;
+    }
+    .blog-preview__read {
+      grid-column: 2;
+      justify-self: start;
+    }
   }
 </style>

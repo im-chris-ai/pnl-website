@@ -1,0 +1,675 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Click to Censor: Blur, Blackout, or Hide Elements Instantly"
+  description="A lightweight Chrome extension that lets you blur, black out, or hide any sensitive element on any webpage in real time, with optional click-to-reveal."
+>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__eyebrow label">Browser Extension</div>
+      <h1 class="hero__headline display">
+        Hide sensitive data<br /><em>in one click</em>.
+      </h1>
+      <p class="hero__body">
+        A privacy-first browser extension for developers and creators. Instantly blur, black out, or hide emails, balances, and images before you share your screen or record.
+      </p>
+      <div class="hero__actions">
+        <a href="#playground" class="btn btn-primary">Try the Sandbox</a>
+        <a href="https://chrome.google.com/webstore" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+          Add to Chrome, It's Free
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INTERACTIVE PLAYGROUND ===================== -->
+  <section id="playground" class="playground-section">
+    <div class="container">
+      <div class="playground__header">
+        <div class="label">Live Demonstration</div>
+        <h2>Interactive Sandbox</h2>
+        <p>
+          Hover over any element on the mock dashboard, then click to blur it. Click again to bring it back.
+        </p>
+      </div>
+
+      <div class="playground__stage">
+        <!-- Simulated Browser Dashboard -->
+        <div class="browser-mock card">
+          <div class="browser-mock__header">
+            <div class="browser-mock__dots">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <div class="browser-mock__url">https://bank.pixanovalabs.com/dashboard</div>
+          </div>
+
+          <div class="browser-mock__body">
+            <div class="mock-dashboard">
+              
+              <!-- Dashboard Header -->
+              <div class="mock-dash__header">
+                <div class="mock-profile">
+                  <div class="mock-avatar censorable" data-censor-type="image">
+                    <img src="/images/blog/rich-content-showcase/workspace.png" alt="User profile" />
+                  </div>
+                  <div class="mock-profile-info">
+                    <span class="mock-name censorable">Sarah Jenkins</span>
+                    <span class="mock-email censorable">sarah.j@pixanovalabs.com</span>
+                  </div>
+                </div>
+                <span class="mock-badge">Personal Account</span>
+              </div>
+
+              <!-- Dashboard Cards Grid -->
+              <div class="mock-dash__grid">
+                
+                <div class="mock-card">
+                  <span class="mock-card-title">Available Balance</span>
+                  <div class="mock-card-val censorable">$12,450.84</div>
+                  <div class="mock-card-num censorable">•••• •••• •••• 4892</div>
+                </div>
+
+                <div class="mock-transactions">
+                  <span class="mock-card-title">Recent Transactions</span>
+                  <ul class="mock-trans-list">
+                    <li class="mock-trans-item">
+                      <span class="mock-trans-name">Subscription Service</span>
+                      <strong class="mock-trans-amount censorable">-$14.99</strong>
+                    </li>
+                    <li class="mock-trans-item">
+                      <span class="mock-trans-name">Client Wire Transfer</span>
+                      <strong class="mock-trans-amount censorable">+$2,500.00</strong>
+                    </li>
+                    <li class="mock-trans-item">
+                      <span class="mock-trans-name">Tech Hardware Store</span>
+                      <strong class="mock-trans-amount censorable">-$1,249.99</strong>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="playground__actions">
+          <button class="btn btn-secondary" id="btn-reset">Reset Sandbox</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURES GRID ===================== -->
+  <section class="features-section">
+    <div class="container">
+      <div class="features__header">
+        <div class="label">Designed for Privacy</div>
+        <h2>Product Capabilities</h2>
+      </div>
+
+      <div class="features__grid">
+        <div class="feature-card card">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          </div>
+          <h3>100% Local & Secure</h3>
+          <p>No servers, no tracking, no database. Everything runs natively inside your browser.</p>
+        </div>
+
+        <div class="feature-card card">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
+            </svg>
+          </div>
+          <h3>Smart Persistence</h3>
+          <p>Censored elements are saved by CSS selector, so they stay hidden across page refreshes.</p>
+        </div>
+
+        <div class="feature-card card">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+          </div>
+          <h3>Three Censor Modes</h3>
+          <p>Soft blur, solid blackout, or fully hide an element. Switch modes on the fly.</p>
+        </div>
+
+        <div class="feature-card card">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          </div>
+          <h3>Click to Reveal</h3>
+          <p>Click a censored element to peek, then hide it again. Your saved censors stay intact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STEPS ===================== -->
+  <section class="steps-section">
+    <div class="container">
+      <div class="steps__header">
+        <div class="label">Quick Start</div>
+        <h2>How to Install & Use</h2>
+      </div>
+
+      <ol class="steps__list">
+        <li class="step-item">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3>Download Extension</h3>
+            <p>Install from the Chrome Web Store in one click. Lightweight and ready instantly, no setup.</p>
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3>Activate Censor Mode</h3>
+            <p>Click the toolbar icon to start the inspector, then pick a censor mode from the popup.</p>
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h3>Select & Hide Elements</h3>
+            <p>Hover any element (text, image, table) and click once to censor it instantly.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== CTA BANNER ===================== -->
+  <section class="cta-banner">
+    <div class="container cta-banner__inner">
+      <h2>Hide sensitive data today.</h2>
+      <p>Get the free Chrome extension and share your screen or record without exposing private info.</p>
+      <a href="https://chrome.google.com/webstore" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        Add to Chrome, It's Free
+      </a>
+    </div>
+  </section>
+
+</Layout>
+
+<!-- ===================== CLIENT INTERACTIVITY SCRIPT ===================== -->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Simple sandbox: hover highlights, click to blur, click again to restore.
+    const BLUR_RADIUS = 12; // px
+    const btnReset = document.getElementById('btn-reset');
+    const censorableElements = document.querySelectorAll('.censorable');
+
+    censorableElements.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        if (!el.classList.contains('censored')) el.classList.add('sandbox-hover');
+      });
+
+      el.addEventListener('mouseleave', () => {
+        el.classList.remove('sandbox-hover');
+      });
+
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (el.classList.contains('censored')) uncensorElement(el);
+        else censorElement(el);
+      });
+    });
+
+    function censorElement(el) {
+      el.classList.remove('sandbox-hover');
+      el.classList.add('censored');
+      el.style.filter = `blur(${BLUR_RADIUS}px)`;
+    }
+
+    function uncensorElement(el) {
+      el.classList.remove('censored');
+      el.style.filter = '';
+    }
+
+    btnReset.addEventListener('click', () => {
+      censorableElements.forEach(el => {
+        el.classList.remove('censored', 'sandbox-hover');
+        el.style.filter = '';
+      });
+    });
+  });
+</script>
+
+<style>
+  /* ===================== HERO ===================== */
+  .hero {
+    padding-block: var(--space-24) var(--space-16);
+    background-color: var(--color-surface);
+  }
+
+  .hero__inner {
+    max-width: 800px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__eyebrow {
+    margin-bottom: var(--space-4);
+  }
+
+  .hero__headline {
+    margin-bottom: var(--space-6);
+  }
+
+  .hero__body {
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin-bottom: var(--space-8);
+    color: var(--color-secondary);
+    line-height: 1.6;
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-4);
+  }
+
+  /* ===================== PLAYGROUND ===================== */
+  .playground-section {
+    padding-block: var(--space-20);
+    background-color: var(--color-neutral);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .playground__header {
+    max-width: 640px;
+    margin-bottom: var(--space-12);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .playground__header h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-family: var(--font-serif);
+    font-weight: var(--weight-bold);
+    color: var(--color-primary);
+  }
+
+  .playground__stage {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    max-width: 920px;
+    margin-inline: auto;
+  }
+
+  .playground__actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Browser Mock */
+  .browser-mock {
+    background-color: var(--color-surface);
+    box-shadow: 0 10px 40px rgba(28, 43, 51, 0.08);
+  }
+
+  .browser-mock__header {
+    background-color: var(--color-neutral);
+    padding: 12px var(--space-4);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .browser-mock__dots {
+    display: flex;
+    gap: 6px;
+    margin-right: var(--space-4);
+  }
+
+  .browser-mock__dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(28, 43, 51, 0.15);
+  }
+
+  .browser-mock__url {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    flex-grow: 1;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--color-secondary);
+    padding-block: 4px;
+    font-family: monospace;
+    max-width: 480px;
+    margin-inline: auto;
+  }
+
+  .browser-mock__body {
+    padding: var(--space-8);
+  }
+
+  /* Simulated Page Styles */
+  .mock-dashboard {
+    background-color: var(--color-surface);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  .mock-dash__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-4);
+  }
+
+  .mock-profile {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .mock-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--color-neutral);
+    cursor: pointer;
+    transition: box-shadow 0.15s ease;
+  }
+
+  .mock-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .mock-profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .mock-name {
+    font-size: 1.05rem;
+    font-weight: var(--weight-semibold);
+    color: var(--color-primary);
+    cursor: pointer;
+  }
+
+  .mock-email {
+    font-size: var(--size-sm);
+    color: var(--color-secondary);
+    cursor: pointer;
+  }
+
+  .mock-badge {
+    background-color: rgba(8, 102, 255, 0.06);
+    color: var(--color-tertiary);
+    font-size: var(--size-label);
+    font-weight: var(--weight-semibold);
+    padding: 4px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: var(--ls-wide);
+  }
+
+  .mock-dash__grid {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: var(--space-6);
+  }
+
+  .mock-card {
+    background-color: var(--color-neutral);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .mock-card-title {
+    font-size: var(--size-label);
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--ls-wide);
+    color: var(--color-secondary);
+  }
+
+  .mock-card-val {
+    font-size: 1.6rem;
+    font-weight: var(--weight-bold);
+    color: var(--color-primary);
+    cursor: pointer;
+  }
+
+  .mock-card-num {
+    font-size: var(--size-sm);
+    color: var(--color-secondary);
+    font-family: monospace;
+    cursor: pointer;
+  }
+
+  .mock-transactions {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .mock-trans-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .mock-trans-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(28, 43, 51, 0.04);
+    padding-bottom: var(--space-2);
+  }
+
+  .mock-trans-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .mock-trans-name {
+    font-size: var(--size-sm);
+    color: var(--color-primary);
+  }
+
+  .mock-trans-amount {
+    font-size: var(--size-sm);
+    color: var(--color-primary);
+    cursor: pointer;
+  }
+
+  /* Sandbox Interaction helpers */
+  .censorable {
+    display: inline-block;
+    transition: all 0.15s ease;
+    border-radius: var(--radius-sm);
+  }
+
+  .censorable.sandbox-hover {
+    outline: 2px dashed var(--color-tertiary);
+    outline-offset: 2px;
+    background-color: rgba(8, 102, 255, 0.03);
+  }
+
+  .censorable.censored {
+    cursor: pointer;
+  }
+
+  /* ===================== FEATURES ===================== */
+  .features-section {
+    padding-block: var(--space-20);
+    background-color: var(--color-surface);
+  }
+
+  .features__header {
+    max-width: 600px;
+    margin-bottom: var(--space-12);
+  }
+
+  .features__header h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-family: var(--font-serif);
+    color: var(--color-primary);
+  }
+
+  .features__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .feature-card {
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .feature-icon {
+    width: 44px;
+    height: 44px;
+    background-color: rgba(8, 102, 255, 0.06);
+    color: var(--color-tertiary);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .feature-card h3 {
+    font-size: 1.1rem;
+    font-weight: var(--weight-semibold);
+  }
+
+  .feature-card p {
+    font-size: var(--size-sm);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ===================== STEPS ===================== */
+  .steps-section {
+    padding-block: var(--space-20);
+    background-color: var(--color-neutral);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .steps__header {
+    max-width: 600px;
+    margin-bottom: var(--space-12);
+  }
+
+  .steps__header h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-family: var(--font-serif);
+    color: var(--color-primary);
+  }
+
+  .steps__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+  }
+
+  .step-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .step-num {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: var(--weight-bold);
+    color: var(--color-tertiary);
+    line-height: 1;
+  }
+
+  .step-content h3 {
+    font-size: 1.1rem;
+    font-weight: var(--weight-semibold);
+    margin-bottom: var(--space-2);
+  }
+
+  .step-content p {
+    font-size: var(--size-sm);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ===================== CTA BANNER ===================== */
+  .cta-banner {
+    padding-block: var(--space-24);
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    text-align: center;
+  }
+
+  .cta-banner__inner {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .cta-banner h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    color: var(--color-on-primary);
+  }
+
+  .cta-banner p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    margin-bottom: var(--space-4);
+  }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 768px) {
+    .hero { padding-block: var(--space-16) var(--space-10); }
+    .steps__list { grid-template-columns: 1fr; gap: var(--space-6); }
+    .mock-dash__grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,80 +1,97 @@
 ---
-// src/components/Navigation.astro
+// Navigation.astro
+const navLinks = [
+  { href: '/click-to-censor', label: 'Product' },
+  { href: '/blog',            label: 'Blog' },
+];
 ---
 
-<header class="top-nav">
-  <div class="container nav-container">
-    <a href="/" class="logo">
-      <img src="/logo.svg" alt="Pixa Nova Labs Logo" class="logo-image" />
-      <span class="logo-text">Pixa Nova Labs</span>
+<header class="nav">
+  <div class="container nav__inner">
+
+    <a href="/" class="nav__brand" aria-label="Pixa Nova Labs, home">
+      <img src="/logo.webp" alt="" width="28" height="28" class="nav__logo" />
+      <span class="nav__wordmark">Pixa Nova Labs</span>
     </a>
-    
-    <nav class="nav-links">
-      <a href="/">Products</a>
-      <a href="/blog">Blog</a>
-      <a href="/about">About</a>
+
+    <nav class="nav__links" aria-label="Main navigation">
+      {navLinks.map(l => (
+        <a href={l.href} class="nav__link">{l.label}</a>
+      ))}
     </nav>
-    
-    <div class="nav-actions">
-      <a href="/contact" class="btn-primary">Contact Us</a>
-    </div>
+
+    <a href="/click-to-censor#playground" class="btn btn-primary nav__cta">
+      Try Sandbox
+    </a>
+
   </div>
 </header>
 
 <style>
-  .top-nav {
-    height: 64px;
-    background-color: var(--color-canvas);
+  .nav {
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid var(--color-hairline);
+    height: var(--nav-height);
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
   }
 
-  .nav-container {
+  .nav__inner {
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100%;
+    gap: var(--space-8);
   }
 
-  .logo {
+  /* Brand */
+  .nav__brand {
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-family: var(--font-display);
-    font-size: 20px;
-    font-weight: 600;
+    gap: 10px;
+    flex-shrink: 0;
   }
 
-  .logo-image {
-    height: 36px;
-    width: auto;
+  .nav__logo {
+    display: block;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
   }
 
-  .logo-text {
-    letter-spacing: -0.5px;
+  .nav__wordmark {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-weight: var(--weight-semibold);
+    color: var(--color-primary);
+    letter-spacing: -0.01em;
   }
 
-  .nav-links {
+  /* Links */
+  .nav__links {
     display: flex;
-    gap: 32px;
+    align-items: center;
+    gap: var(--space-8);
   }
 
-  .nav-links a {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--color-ink);
-    transition: color 0.2s ease;
+  .nav__link {
+    font-size: var(--size-sm);
+    font-weight: var(--weight-medium);
+    color: var(--color-secondary);
+    transition: color 0.12s ease;
+  }
+  .nav__link:hover { color: var(--color-primary); }
+
+  /* CTA */
+  .nav__cta {
+    padding: 8px 18px;
+    font-size: var(--size-sm);
+    flex-shrink: 0;
   }
 
-  .nav-links a:hover {
-    color: var(--color-brand-pink);
-  }
-
-  @media (max-width: 768px) {
-    .nav-links, .nav-actions {
-      display: none; /* In a real app, implement hamburger menu here */
-    }
+  @media (max-width: 600px) {
+    .nav__links { display: none; }
   }
 </style>
