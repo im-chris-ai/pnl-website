@@ -1,0 +1,298 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const lastUpdated = 'June 24, 2026';
+const contactEmail = 'support@pixanovalabs.com';
+---
+
+<Layout
+  title="Herald Privacy Policy"
+  description="How the Herald read-aloud pronunciation app handles your data. Your books stay on your device, sign-in is optional, and we do not sell your data or use it for ads."
+>
+  <section class="policy">
+    <div class="container policy__inner">
+      <header class="policy__head">
+        <div class="label">Legal</div>
+        <h1 class="policy__title">Privacy Policy for Herald</h1>
+        <p class="policy__updated">Last updated: {lastUpdated}</p>
+      </header>
+
+      <div class="policy__intro card">
+        <p>
+          Herald ("the app", "we", "us", "our") is developed by <strong>Pixa Nova Labs</strong>.
+          This policy explains what information the app handles, why, and your choices.
+          We have tried to keep it in plain language.
+        </p>
+        <p>
+          In short: the app keeps your books on your own device and only sends data to our
+          servers when you actively use a feature that needs it (like reading a book aloud to be
+          scored, or generating a book). Signing in with a Google account is optional; if you do,
+          your practice history (which days you practised, which pages, and your scores) is saved
+          to your account so your progress can follow you to a new device. We do not sell your
+          data and we do not use it for advertising.
+        </p>
+      </div>
+
+      <div class="policy__body">
+        <h2>1. Information the app handles</h2>
+        <h3>Things stored only on your device (never uploaded to us)</h3>
+        <ul>
+          <li>
+            Your books (titles and text), your per-book practice scores, your settings, and any
+            book cover images. These stay on your phone and are removed if you delete the app or
+            clear its data.
+          </li>
+        </ul>
+
+        <h3>Things sent to our servers only when you use a feature</h3>
+        <ul>
+          <li>
+            <strong>Your account and practice history (only if you sign in).</strong>
+            Signing in with Google is optional. If you choose to, we receive your Google account's
+            name, email address, and a user ID, and your practice history (which days you
+            practised, which pages, and your scores) is stored in your account in the cloud so your
+            progress (streak, accuracy, and practice calendar) can follow you to a new device. Your
+            books themselves are not uploaded; only this practice history is. You can sign out at
+            any time, and you can ask us to delete this data (see Contact).
+          </li>
+          <li>
+            <strong>Your voice recording.</strong>
+            When you tap Record to be scored, the app records a short audio clip and sends it to
+            our server to be turned into text so your pronunciation can be scored. The clip is
+            processed to produce the text and is not stored by us afterward. (When you are offline,
+            your device's own built-in speech recognition may be used instead, in which case the
+            audio is handled on your device.)
+          </li>
+          <li>
+            <strong>Topics you type.</strong>
+            When you use "Generate a book", the topic you type is sent to our server, which uses it
+            (including an automated web search for current topics) to write the book. The topic is
+            not stored by us after the book is created.
+          </li>
+          <li>
+            <strong>Words you tap.</strong>
+            When you tap a word to hear it or see its meaning, that word is sent to our server to
+            return the audio and a short definition. It is not stored by us afterward.
+          </li>
+          <li>
+            <strong>An anonymous device identifier.</strong>
+            The app creates a random code on first launch and sends it with cloud requests so we
+            can enforce the free daily limits (for example, how many books you can generate per
+            day). This code is not your name, email, or account, and is not used to identify you
+            personally. It is held briefly on our server to count daily usage and automatically
+            expires after a couple of days. Reinstalling the app creates a new code.
+          </li>
+        </ul>
+
+        <h3>What we do NOT collect</h3>
+        <ul>
+          <li>
+            Signing in is optional. If you do not sign in, we do not collect your name, email
+            address, or login. If you do sign in with Google, we receive your name, email, and a
+            user ID (see above), and nothing more.
+          </li>
+          <li>We do not use third-party advertising.</li>
+          <li>We do not use third-party analytics or tracking.</li>
+        </ul>
+
+        <h2>2. How we use the information</h2>
+        <p>
+          We use the information only to provide the app's features: turning your speech into text
+          for scoring, generating a book from your topic, giving you a word's audio and meaning,
+          producing the natural reading voice, and enforcing the free daily limits. That's it. We
+          do not sell your information, and we do not use it for advertising or profiling.
+        </p>
+
+        <h2>3. Service providers we use</h2>
+        <p>
+          To provide these features, your requests pass through trusted service providers that
+          process the data on our behalf to perform the specific task, then return the result:
+        </p>
+        <ul>
+          <li>
+            <strong>Cloudflare</strong>: hosts our server and stores the anonymous daily-usage
+            counter. (<a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare Privacy Policy</a>)
+          </li>
+          <li>
+            <strong>Google (Firebase)</strong>: provides the optional Google sign-in and securely
+            stores your account's practice history so it can sync across your devices. Only used if
+            you sign in. (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>)
+          </li>
+          <li>
+            <strong>Groq</strong>: turns your voice recording into text, generates books from your
+            topic (including web search), and returns word meanings. (<a href="https://groq.com/privacy-policy/" target="_blank" rel="noopener noreferrer">Groq Privacy Policy</a>)
+          </li>
+          <li>
+            <strong>DeepInfra</strong>: produces the natural reading voice (text-to-speech).
+            (<a href="https://deepinfra.com/privacy" target="_blank" rel="noopener noreferrer">DeepInfra Privacy Policy</a>)
+          </li>
+        </ul>
+        <p>
+          These providers process the data only to perform the requested task. Your voice
+          recordings and typed topics are not stored by us. Each provider handles data under its
+          own privacy terms, linked above. If we change a provider in the future, we will update
+          this list.
+        </p>
+
+        <h2>4. Where data is processed</h2>
+        <p>
+          Our servers and service providers may process your requests on computers located in other
+          countries (for example, the United States). By using the app you understand that the data
+          needed for a feature may be processed outside your country.
+        </p>
+
+        <h2>5. Data retention</h2>
+        <ul>
+          <li>
+            <strong>On your device:</strong> your books, scores, and settings stay until you delete
+            them, clear the app's data, or uninstall the app.
+          </li>
+          <li>
+            <strong>On our servers:</strong> we do not keep your voice recordings or typed topics
+            after a request is processed. The anonymous daily-usage counter automatically expires
+            after about two days.
+          </li>
+          <li>
+            <strong>In your account (only if you sign in):</strong> your practice history is kept so
+            it can sync to your devices, until you delete it or ask us to remove it.
+          </li>
+        </ul>
+
+        <h2>6. Security</h2>
+        <p>
+          All communication between the app and our servers is encrypted in transit using HTTPS.
+        </p>
+
+        <h2>7. Permissions the app asks for</h2>
+        <ul>
+          <li>
+            <strong>Microphone:</strong> needed to record your reading so it can be scored. The app
+            only records while you are actively using the Record feature. You can turn this
+            permission off in your device settings (the scoring feature will not work without it).
+          </li>
+          <li>
+            <strong>Internet:</strong> needed for the cloud features above (scoring, book
+            generation, word meanings, the natural voice).
+          </li>
+        </ul>
+
+        <h2>8. Children's privacy</h2>
+        <p>
+          Herald is not directed to children under 13, and we do not knowingly collect personal
+          information from children. If you believe a child has provided personal information,
+          please contact us and we will address it.
+        </p>
+
+        <h2>9. Your choices</h2>
+        <ul>
+          <li>You can stop the microphone by denying or revoking the permission in your device settings.</li>
+          <li>You can remove all locally stored data by clearing the app's data or uninstalling the app.</li>
+          <li>You can sign out at any time, and you can ask us to delete your account's practice history using the contact details below.</li>
+          <li>You can contact us with any privacy question using the details below.</li>
+        </ul>
+
+        <h2>10. Changes to this policy</h2>
+        <p>
+          We may update this policy as the app changes (for example, if we add optional accounts).
+          When we do, we will update the "Last updated" date above. Significant changes will be
+          reflected in the app or its store listing.
+        </p>
+
+        <h2>11. Contact</h2>
+        <p>
+          If you have any questions about this policy, contact us at:
+          <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .policy {
+    padding-block: var(--space-16) var(--space-20);
+    background-color: var(--color-surface);
+  }
+
+  .policy__inner {
+    max-width: 760px;
+  }
+
+  .policy__head {
+    margin-bottom: var(--space-8);
+  }
+
+  .policy__title {
+    font-family: var(--font-serif);
+    font-size: var(--size-h1);
+    font-weight: var(--weight-bold);
+    color: var(--color-primary);
+    line-height: var(--lh-heading);
+    margin-top: var(--space-2);
+  }
+
+  .policy__updated {
+    color: var(--color-secondary);
+    font-size: var(--size-sm);
+    margin-top: var(--space-3);
+  }
+
+  .policy__intro {
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    background-color: var(--color-neutral);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-10);
+    line-height: var(--lh-body);
+  }
+
+  .policy__body h2 {
+    font-family: var(--font-serif);
+    font-size: var(--size-h2);
+    font-weight: var(--weight-semibold);
+    color: var(--color-primary);
+    margin-top: var(--space-10);
+    margin-bottom: var(--space-4);
+  }
+
+  .policy__body h3 {
+    font-size: var(--size-h3);
+    font-weight: var(--weight-semibold);
+    color: var(--color-primary);
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-3);
+  }
+
+  .policy__body p {
+    margin-bottom: var(--space-4);
+    line-height: var(--lh-body);
+    color: var(--color-primary);
+  }
+
+  .policy__body ul {
+    list-style: disc;
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .policy__body li {
+    line-height: var(--lh-body);
+    color: var(--color-primary);
+  }
+
+  .policy__body a {
+    color: var(--color-tertiary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .policy__body a:hover {
+    opacity: 0.8;
+  }
+</style>
