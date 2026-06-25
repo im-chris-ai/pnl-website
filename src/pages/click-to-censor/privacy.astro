@@ -1,0 +1,244 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const lastUpdated = 'June 25, 2026';
+const contactEmail = 'support@pixanovalabs.com';
+---
+
+<Layout
+  title="Click to Censor Privacy Policy"
+  description="How the Click to Censor browser extension handles your data. Your censor selections stay on your device, and the only data sent off-device is a license key to verify a premium purchase."
+>
+  <section class="policy">
+    <div class="container policy__inner">
+      <header class="policy__head">
+        <div class="label">Legal</div>
+        <h1 class="policy__title">Privacy Policy for Click to Censor</h1>
+        <p class="policy__updated">Last updated: {lastUpdated}</p>
+      </header>
+
+      <div class="policy__intro card">
+        <p>
+          Click to Censor ("the extension", "we", "us", "our") is developed by
+          <strong>Pixa Nova Labs</strong>. This policy explains what information the extension
+          handles, why, and your choices. We have tried to keep it in plain language.
+        </p>
+        <p>
+          In short: everything you censor stays on your own device. The extension has no analytics,
+          no tracking, and no account. The only time any data leaves your device is when you choose
+          to activate a premium license, in which case your license key is sent to our payment
+          provider to confirm the purchase. We do not sell your data and we do not use it for
+          advertising.
+        </p>
+      </div>
+
+      <div class="policy__body">
+        <h2>1. Information the extension handles</h2>
+        <h3>Things stored only on your device (never uploaded to us)</h3>
+        <ul>
+          <li>
+            <strong>Your censors.</strong> For each website, the extension saves the elements you
+            chose to censor (as CSS selectors) and the style you picked (blur, blackout, or hide).
+            This is stored locally in your browser so your censors persist across page reloads. It
+            is never uploaded to us.
+          </li>
+          <li>
+            <strong>Your premium status.</strong> If you activate a premium license, the extension
+            stores a flag and your license key locally so it knows the paid features are unlocked.
+          </li>
+        </ul>
+
+        <h3>Things sent off your device only when you use a feature</h3>
+        <ul>
+          <li>
+            <strong>Your license key (only if you buy and activate premium).</strong>
+            When you enter a license key to unlock premium, the extension sends that key to our
+            payment provider, Polar, to confirm it is valid. The extension also re-checks the key
+            with Polar about once a day so that a refunded or disabled key stops unlocking the paid
+            features. The key is the only thing sent, and only for this validation. If you never buy
+            premium, no license key exists and nothing is ever sent.
+          </li>
+        </ul>
+
+        <h3>What we do NOT collect</h3>
+        <ul>
+          <li>The pages you visit, their content, or the elements you censor. These never leave your device.</li>
+          <li>Your name, email, or any account. The extension has no sign-in.</li>
+          <li>We do not use third-party advertising.</li>
+          <li>We do not use third-party analytics or tracking.</li>
+        </ul>
+
+        <h2>2. How we use the information</h2>
+        <p>
+          The censors you create are used only to apply the blur, blackout, or hide styles you
+          asked for, on your own device. Your license key is used only to verify a premium purchase.
+          That's it. We do not sell your information, and we do not use it for advertising or
+          profiling.
+        </p>
+
+        <h2>3. Service providers we use</h2>
+        <ul>
+          <li>
+            <strong>Polar</strong>: processes premium purchases and validates license keys. Your
+            license key is sent to Polar only to confirm it is valid.
+            (<a href="https://polar.sh/legal/privacy" target="_blank" rel="noopener noreferrer">Polar Privacy Policy</a>)
+          </li>
+        </ul>
+
+        <h2>4. Permissions the extension asks for</h2>
+        <ul>
+          <li>
+            <strong>Access to the sites you visit (host permissions):</strong> needed so the
+            extension can apply your censors on whatever page you choose to use it on. It only acts
+            on the page when you ask it to.
+          </li>
+          <li>
+            <strong>Storage:</strong> needed to save your censors and premium status locally on your
+            device.
+          </li>
+          <li>
+            <strong>Active tab:</strong> needed to start element-selection mode on the page you are
+            currently viewing when you click the toolbar button.
+          </li>
+          <li>
+            <strong>Alarms:</strong> needed to re-check your premium license about once a day in the
+            background.
+          </li>
+        </ul>
+
+        <h2>5. Data retention</h2>
+        <ul>
+          <li>
+            <strong>On your device:</strong> your censors and premium status stay until you remove
+            them, clear the extension's data, or uninstall the extension.
+          </li>
+          <li>
+            <strong>With our payment provider:</strong> we do not keep a separate copy of your
+            license key. Polar holds purchase and license records under its own privacy terms.
+          </li>
+        </ul>
+
+        <h2>6. Security</h2>
+        <p>
+          License validation between the extension and our payment provider is encrypted in transit
+          using HTTPS.
+        </p>
+
+        <h2>7. Children's privacy</h2>
+        <p>
+          Click to Censor is not directed to children under 13, and we do not knowingly collect
+          personal information from children.
+        </p>
+
+        <h2>8. Your choices</h2>
+        <ul>
+          <li>You can remove any censor at any time from the extension popup, or clear them all.</li>
+          <li>You can remove all locally stored data by clearing the extension's data or uninstalling it.</li>
+          <li>You can contact us with any privacy question using the details below.</li>
+        </ul>
+
+        <h2>9. Changes to this policy</h2>
+        <p>
+          We may update this policy as the extension changes. When we do, we will update the "Last
+          updated" date above. Significant changes will be reflected in the extension's store
+          listing.
+        </p>
+
+        <h2>10. Contact</h2>
+        <p>
+          If you have any questions about this policy, contact us at:
+          <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .policy {
+    padding-block: var(--space-16) var(--space-20);
+    background-color: var(--color-surface);
+  }
+
+  .policy__inner {
+    max-width: 760px;
+  }
+
+  .policy__head {
+    margin-bottom: var(--space-8);
+  }
+
+  .policy__title {
+    font-family: var(--font-serif);
+    font-size: var(--size-h1);
+    font-weight: var(--weight-bold);
+    color: var(--color-primary);
+    line-height: var(--lh-heading);
+    margin-top: var(--space-2);
+  }
+
+  .policy__updated {
+    color: var(--color-secondary);
+    font-size: var(--size-sm);
+    margin-top: var(--space-3);
+  }
+
+  .policy__intro {
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    background-color: var(--color-neutral);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-10);
+    line-height: var(--lh-body);
+  }
+
+  .policy__body h2 {
+    font-family: var(--font-serif);
+    font-size: var(--size-h2);
+    font-weight: var(--weight-semibold);
+    color: var(--color-primary);
+    margin-top: var(--space-10);
+    margin-bottom: var(--space-4);
+  }
+
+  .policy__body h3 {
+    font-size: var(--size-h3);
+    font-weight: var(--weight-semibold);
+    color: var(--color-primary);
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-3);
+  }
+
+  .policy__body p {
+    margin-bottom: var(--space-4);
+    line-height: var(--lh-body);
+    color: var(--color-primary);
+  }
+
+  .policy__body ul {
+    list-style: disc;
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .policy__body li {
+    line-height: var(--lh-body);
+    color: var(--color-primary);
+  }
+
+  .policy__body a {
+    color: var(--color-tertiary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .policy__body a:hover {
+    opacity: 0.8;
+  }
+</style>

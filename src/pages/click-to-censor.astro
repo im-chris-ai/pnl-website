@@ -204,6 +204,7 @@ import Layout from '../layouts/Layout.astro';
       <a href="https://chrome.google.com/webstore" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
         Add to Chrome, It's Free
       </a>
+      <a href="/click-to-censor/privacy" class="cta-banner__privacy">Privacy Policy</a>
     </div>
   </section>
 
@@ -665,6 +666,17 @@ import Layout from '../layouts/Layout.astro';
     font-size: 1.1rem;
     margin-bottom: var(--space-4);
   }
+
+  .cta-banner__privacy {
+    margin-top: var(--space-4);
+    font-size: var(--size-sm);
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.12s ease;
+  }
+
+  .cta-banner__privacy:hover { color: var(--color-on-primary); }
 
   /* ===================== RESPONSIVE ===================== */
   @media (max-width: 768px) {
