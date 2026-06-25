@@ -1,7 +1,8 @@
 ---
 // Navigation.astro
 const navLinks = [
-  { href: '/click-to-censor', label: 'Product' },
+  { href: '/click-to-censor', label: 'Click to Censor' },
+  { href: '/herald',          label: 'Herald' },
   { href: '/blog',            label: 'Blog' },
 ];
 ---
@@ -19,10 +20,6 @@ const navLinks = [
         <a href={l.href} class="nav__link">{l.label}</a>
       ))}
     </nav>
-
-    <a href="/click-to-censor#playground" class="btn btn-primary nav__cta">
-      Try Sandbox
-    </a>
 
   </div>
 </header>

@@ -103,6 +103,24 @@ const recentPosts = allPosts
 
   <hr class="divider" />
 
+  <!-- ===================== ALSO FROM THE LAB ===================== -->
+  <section class="more-section">
+    <div class="container">
+      <div class="more-section__header">
+        <div class="label">Also from the Lab</div>
+      </div>
+      <a href="/herald" class="more-card card">
+        <div class="more-card__body">
+          <h2>Herald</h2>
+          <p>A read-aloud app that scores your pronunciation, reads pages in a natural voice, and helps you build a daily speaking habit. Coming soon to Google Play.</p>
+          <span class="more-card__link">Learn more &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
   <!-- ===================== BLOG PREVIEW ===================== -->
   {recentPosts.length > 0 && (
     <section class="blog-preview">
@@ -243,6 +261,53 @@ const recentPosts = allPosts
 
   .product-section__cta {
     display: flex;
+  }
+
+  /* ===================== ALSO FROM THE LAB ===================== */
+  .more-section {
+    padding-block: var(--space-24);
+    background-color: var(--color-surface);
+  }
+
+  .more-section__header {
+    margin-bottom: var(--space-8);
+  }
+
+  .more-card {
+    display: block;
+    padding: var(--space-8);
+    background-color: var(--color-neutral);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+  .more-card:hover {
+    box-shadow: 0 4px 20px rgba(28, 43, 51, 0.07);
+    transform: translateY(-2px);
+  }
+
+  .more-card__body {
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .more-card h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .more-card p {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--color-secondary);
+    margin: 0;
+  }
+
+  .more-card__link {
+    font-size: var(--size-sm);
+    font-weight: var(--weight-semibold);
+    color: var(--color-tertiary);
+    margin-top: var(--space-2);
   }
 
   /* ===================== BLOG PREVIEW ===================== */
