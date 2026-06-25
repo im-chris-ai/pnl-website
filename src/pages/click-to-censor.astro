@@ -1,10 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const appSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Click to Censor',
+  applicationCategory: 'BrowserApplication',
+  operatingSystem: 'Chrome',
+  url: 'https://pixanovalabs.com/click-to-censor',
+  description:
+    'A lightweight Chrome extension that lets you blur, black out, or hide any sensitive element on any webpage in real time, with optional click-to-reveal.',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+};
 ---
 
 <Layout
   title="Click to Censor: Blur, Blackout, or Hide Elements Instantly"
   description="A lightweight Chrome extension that lets you blur, black out, or hide any sensitive element on any webpage in real time, with optional click-to-reveal."
+  jsonLd={appSchema}
 >
 
   <!-- ===================== HERO ===================== -->

@@ -7,12 +7,22 @@ interface Props {
   title: string;
   description: string;
   image?: string;
+  jsonLd?: Record<string, any> | Record<string, any>[];
 }
 
-const { title, description, image = '/logo.webp' } = Astro.props;
+const { title, description, image = '/logo.webp', jsonLd } = Astro.props;
 const fullTitle = `${title} | Pixa Nova Labs`;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = new URL(image, Astro.site).href;
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Pixa Nova Labs',
+  url: new URL('/', Astro.site).href,
+  logo: new URL('/logo.webp', Astro.site).href,
+};
+const schemas = [orgSchema, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [])];
 ---
 
 <!doctype html>
@@ -39,6 +49,10 @@ const ogImage = new URL(image, Astro.site).href;
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+
+    {schemas.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
   </head>
   <body>
     <Navigation />

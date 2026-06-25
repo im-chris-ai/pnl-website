@@ -12,6 +12,17 @@ const waveBars = [10, 18, 26, 14, 30, 20, 12, 28, 16, 23, 13, 30, 17, 24, 11, 21
 // listed are 0 (no reading). The last seven (24-30) all have a level, so they
 // read as a seven-day streak.
 const dow = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+
+const appSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'MobileApplication',
+  name: 'Herald',
+  applicationCategory: 'EducationalApplication',
+  operatingSystem: 'Android',
+  url: 'https://pixanovalabs.com/herald',
+  description:
+    'Herald is a read-aloud app that scores your pronunciation, reads pages in a natural voice, and helps you build a daily speaking habit.',
+};
 const levels = { 2: 2, 3: 3, 5: 1, 6: 1, 9: 2, 10: 4, 12: 2, 13: 1, 16: 3, 17: 2, 19: 1, 20: 1, 22: 1, 24: 2, 25: 3, 26: 4, 27: 2, 28: 3, 29: 4, 30: 3 };
 const monthOffset = 3; // the 1st falls on a Wednesday
 const calCells = [];
@@ -23,6 +34,7 @@ while (calCells.length % 7 !== 0) calCells.push(null);
 <Layout
   title="Herald: Read Aloud and Build a Speaking Habit"
   description="Herald is a read-aloud app that scores your pronunciation, reads pages in a natural voice, and helps you build a daily speaking habit. Coming soon to Google Play."
+  jsonLd={appSchema}
 >
   <div class="herald-page">
 

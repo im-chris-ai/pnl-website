@@ -32,90 +32,44 @@ const recentPosts = allPosts
 
   <hr class="divider" />
 
-  <!-- ===================== PRODUCT ===================== -->
-  <section id="product" class="product-section">
+  <!-- ===================== OUR APPS ===================== -->
+  <section id="product" class="apps-section">
     <div class="container">
-
-      <div class="product-section__header">
-        <div class="label">Flagship Product</div>
-        <h2>Click to Censor</h2>
-        <p>
-          A lightweight browser extension that lets you instantly blur, black out, or hide any element on any webpage, in real time. Built for developers who share their screens and creators who record tutorials without exposing sensitive data.
-        </p>
+      <div class="apps-section__header">
+        <div class="label">Our apps</div>
+        <h2>Focused tools, no bloat</h2>
+        <p>Each app does one job, and does it well. Built for developers, creators, and teams who want power without the noise.</p>
       </div>
-
-      <!-- Feature highlights -->
-      <ul class="product-features">
-        <li class="product-feature card">
-          <div class="product-feature__icon">
-            <!-- Local / Privacy -->
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7l-9-5Z" stroke="#0866FF" stroke-width="1.8" stroke-linejoin="round"/>
-              <path d="M9 12l2 2 4-4" stroke="#0866FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3>Runs 100% locally</h3>
-          <p>All processing happens in your browser. No data leaves your machine. Ever.</p>
+      <ul class="apps-grid">
+        <li>
+          <a href="/click-to-censor" class="app-card card">
+            <div class="app-card__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0866FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />
+                <path d="M16.681 16.673A8.717 8.717 0 0 1 12 18c-3.6 0-6.6-2-9-6 1.272-2.12 2.712-3.678 4.32-4.674m2.86-1.146A9.055 9.055 0 0 1 12 6c3.6 0 6.6 2 9 6-.666 1.11-1.379 2.067-2.138 2.87" />
+                <path d="M3 3l18 18" />
+              </svg>
+            </div>
+            <h3>Click to Censor</h3>
+            <p>Blur, black out, or hide anything on any webpage. Share your screen without leaks.</p>
+            <span class="app-card__link">Learn more &rarr;</span>
+          </a>
         </li>
-
-        <li class="product-feature card">
-          <div class="product-feature__icon">
-            <!-- Click / Interact -->
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18" stroke="#0866FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3>Click anything to hide</h3>
-          <p>Hover to highlight, click to censor. Works on text, images, tables, and more.</p>
-        </li>
-
-        <li class="product-feature card">
-          <div class="product-feature__icon">
-            <!-- Persist / Save -->
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z" stroke="#0866FF" stroke-width="1.8" stroke-linejoin="round"/>
-              <path d="M17 21v-8H7v8M7 3v5h8" stroke="#0866FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3>Persists across reloads</h3>
-          <p>Censors are saved per-site by CSS selector and survive page refreshes automatically.</p>
-        </li>
-
-        <li class="product-feature card">
-          <div class="product-feature__icon">
-            <!-- Styles -->
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <circle cx="12" cy="12" r="9" stroke="#0866FF" stroke-width="1.8"/>
-              <path d="M12 8v4l3 3" stroke="#0866FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3>Three censor modes</h3>
-          <p>Blur, blackout, or fully hide an element. Switch modes on the fly.</p>
+        <li>
+          <a href="/herald" class="app-card card">
+            <div class="app-card__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0866FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M15 8a5 5 0 0 1 0 8" />
+                <path d="M17.7 5a9 9 0 0 1 0 14" />
+                <path d="M6 15H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h2l3.5-4.5A.8.8 0 0 1 11 5v14a.8.8 0 0 1-1.5.5L6 15" />
+              </svg>
+            </div>
+            <h3>Herald</h3>
+            <p>A read-aloud app that scores your pronunciation and builds a daily speaking habit.</p>
+            <span class="app-card__link">Learn more &rarr;</span>
+          </a>
         </li>
       </ul>
-
-      <div class="product-section__cta">
-        <a href="#" class="btn btn-primary">Add to Chrome, it's free</a>
-      </div>
-
-    </div>
-  </section>
-
-  <hr class="divider" />
-
-  <!-- ===================== ALSO FROM THE LAB ===================== -->
-  <section class="more-section">
-    <div class="container">
-      <div class="more-section__header">
-        <div class="label">Also from the Lab</div>
-      </div>
-      <a href="/herald" class="more-card card">
-        <div class="more-card__body">
-          <h2>Herald</h2>
-          <p>A read-aloud app that scores your pronunciation, reads pages in a natural voice, and helps you build a daily speaking habit. Coming soon to Google Play.</p>
-          <span class="more-card__link">Learn more &rarr;</span>
-        </div>
-      </a>
     </div>
   </section>
 
@@ -191,13 +145,13 @@ const recentPosts = allPosts
     gap: var(--space-3);
   }
 
-  /* ===================== PRODUCT SECTION ===================== */
-  .product-section {
+  /* ===================== OUR APPS ===================== */
+  .apps-section {
     padding-block: var(--space-24);
     background-color: var(--color-neutral);
   }
 
-  .product-section__header {
+  .apps-section__header {
     max-width: 540px;
     margin-bottom: var(--space-12);
     display: flex;
@@ -205,24 +159,23 @@ const recentPosts = allPosts
     gap: var(--space-3);
   }
 
-  .product-section__header h2 {
+  .apps-section__header h2 {
     font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   }
 
-  .product-section__header p {
+  .apps-section__header p {
     font-size: 1rem;
     line-height: 1.65;
   }
 
-  /* Feature grid */
-  .product-features {
+  .apps-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: var(--space-4);
-    margin-bottom: var(--space-12);
   }
 
-  .product-feature {
+  .app-card {
+    height: 100%;
     padding: var(--space-6);
     display: flex;
     flex-direction: column;
@@ -231,12 +184,12 @@ const recentPosts = allPosts
     transition: box-shadow 0.15s ease, transform 0.15s ease;
   }
 
-  .product-feature:hover {
+  .app-card:hover {
     box-shadow: 0 4px 20px rgba(28, 43, 51, 0.07);
     transform: translateY(-2px);
   }
 
-  .product-feature__icon {
+  .app-card__icon {
     width: 40px;
     height: 40px;
     background-color: rgba(8, 102, 255, 0.06);
@@ -247,67 +200,24 @@ const recentPosts = allPosts
     flex-shrink: 0;
   }
 
-  .product-feature h3 {
+  .app-card h3 {
     font-size: 1rem;
     font-weight: var(--weight-semibold);
   }
 
-  .product-feature p {
+  .app-card p {
     font-size: var(--size-sm);
     color: var(--color-secondary);
     line-height: 1.55;
     margin: 0;
   }
 
-  .product-section__cta {
-    display: flex;
-  }
-
-  /* ===================== ALSO FROM THE LAB ===================== */
-  .more-section {
-    padding-block: var(--space-24);
-    background-color: var(--color-surface);
-  }
-
-  .more-section__header {
-    margin-bottom: var(--space-8);
-  }
-
-  .more-card {
-    display: block;
-    padding: var(--space-8);
-    background-color: var(--color-neutral);
-    transition: box-shadow 0.15s ease, transform 0.15s ease;
-  }
-
-  .more-card:hover {
-    box-shadow: 0 4px 20px rgba(28, 43, 51, 0.07);
-    transform: translateY(-2px);
-  }
-
-  .more-card__body {
-    max-width: 560px;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-  }
-
-  .more-card h2 {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-  }
-
-  .more-card p {
-    font-size: 1rem;
-    line-height: 1.65;
-    color: var(--color-secondary);
-    margin: 0;
-  }
-
-  .more-card__link {
+  .app-card__link {
     font-size: var(--size-sm);
     font-weight: var(--weight-semibold);
     color: var(--color-tertiary);
-    margin-top: var(--space-2);
+    margin-top: auto;
+    padding-top: var(--space-2);
   }
 
   /* ===================== BLOG PREVIEW ===================== */
