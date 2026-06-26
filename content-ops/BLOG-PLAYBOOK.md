@@ -80,7 +80,8 @@ Two kinds, different sources:
   `npm run cover -- <slug> "<prompt>"` (Cloudflare Workers AI). Output lands at
   `public/images/blog/<slug>/cover.webp`. Keep covers text-free.
 - **In-body (real screenshots):** real shots of the app/extension that illustrate a step.
-  Reuse from a small shared library; capture new ones only when a post needs them. No stock.
+  Reuse from the library in `content-ops/screenshots.md`; capture new ones only when a post
+  needs something not there. No stock.
 
 - **Format:** cover is `.webp`; screenshots `.webp`/`.png`/`.jpg`.
 - **Location + naming:** `public/images/blog/<slug>/`, named `cover.webp`, `step-1.<ext>`, etc.
@@ -100,6 +101,7 @@ Two kinds, different sources:
 - Topics: `content-ops/backlog.md`
 - Writing voice: `content-ops/voice.md`
 - Cover style + generator: `content-ops/cover-style.md`, `scripts/cover-gen/generate.mjs`
+- Screenshot library: `content-ops/screenshots.md`
 - App ground truth: `content-ops/facts-click-to-censor.md`, `content-ops/facts-herald.md`
 - Published posts: `src/content/blog/*.md`
 - Images: `public/images/blog/<slug>/`

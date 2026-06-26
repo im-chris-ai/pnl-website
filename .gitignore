@@ -21,6 +21,9 @@ pnpm-debug.log*
 .env.local
 .env.*.local
 
+# raw image drop zone (processed copies live in public/images/blog/)
+content-ops/incoming/
+
 # IDEs and editors
 .idea/
 .vscode/
