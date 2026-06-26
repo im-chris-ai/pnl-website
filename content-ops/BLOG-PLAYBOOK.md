@@ -30,8 +30,8 @@ Whenever someone asks to "write / create / draft a blog post" for one of the app
    (e.g. `hide-data-before-screen-sharing`).
 5. Create the file at `src/content/blog/<slug>.md` with valid frontmatter
    (see Post structure). `date` is today in `YYYY-MM-DD`.
-6. Add images per the Images section below: a real-screenshot cover, plus any in-body
-   step shots. Set `image:` in frontmatter and write descriptive alt text.
+6. Add images per the Images section below: generate the AI cover, plus any in-body
+   step screenshots. Set `image:` in frontmatter and write descriptive alt text.
 7. Add at least one internal link to the app page, plus links to related posts where natural.
 8. Self-check against the Definition of done below.
 9. Present the draft for review. Do not publish until approved.
@@ -74,15 +74,17 @@ Link to the app page here: [App Name](/app-page).]
 ```
 
 ## Images
-- **Source: real screenshots** of the actual app/extension. No AI art, no stock photos.
-- **Cover:** one per post, landscape ~1200x630 (also used as the social/OG preview).
-  Show the product doing the thing (e.g. a webpage element being blurred).
-- **In-body:** screenshots that illustrate a step; add only where they clarify.
-- **Format:** `.webp` preferred for size; `.png`/`.jpg` are fine. Keep covers reasonably small.
-- **Location + naming:** `public/images/blog/<slug>/`, named `cover.<ext>`, `step-1.<ext>`, etc.
-- **Alt text:** describe what the screenshot shows, never "cover image".
-- **Capture:** the owner provides raw captures (share the path or drop them in
-  `content-ops/incoming/`); the assistant crops, sizes, names, and places them.
+Two kinds, different sources:
+- **Cover (AI-generated):** one per post, 1200x630 (also the social/OG preview).
+  Compose the brand style from `content-ops/cover-style.md` + the post subject, then run
+  `npm run cover -- <slug> "<prompt>"` (Cloudflare Workers AI). Output lands at
+  `public/images/blog/<slug>/cover.webp`. Keep covers text-free.
+- **In-body (real screenshots):** real shots of the app/extension that illustrate a step.
+  Reuse from a small shared library; capture new ones only when a post needs them. No stock.
+
+- **Format:** cover is `.webp`; screenshots `.webp`/`.png`/`.jpg`.
+- **Location + naming:** `public/images/blog/<slug>/`, named `cover.webp`, `step-1.<ext>`, etc.
+- **Alt text:** describe what the image shows, never "cover image".
 
 ## Definition of done
 - [ ] Frontmatter valid: title, description, date, image.
@@ -97,6 +99,7 @@ Link to the app page here: [App Name](/app-page).]
 ## File map
 - Topics: `content-ops/backlog.md`
 - Writing voice: `content-ops/voice.md`
+- Cover style + generator: `content-ops/cover-style.md`, `scripts/cover-gen/generate.mjs`
 - App ground truth: `content-ops/facts-click-to-censor.md`, `content-ops/facts-herald.md`
 - Published posts: `src/content/blog/*.md`
 - Images: `public/images/blog/<slug>/`
