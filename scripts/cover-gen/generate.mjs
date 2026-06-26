@@ -20,8 +20,9 @@ function loadEnv() {
 loadEnv();
 
 const [slug, prompt] = process.argv.slice(2);
-// flux-1-schnell takes a simple JSON { prompt } body. (Flux 2 models require multipart.)
-const MODEL = process.env.CF_IMAGE_MODEL || '@cf/black-forest-labs/flux-1-schnell';
+// Models that take a simple JSON { prompt } body. (Flux 2 models require multipart.)
+// Override with CF_IMAGE_MODEL in .env; switching is a one-line change.
+const MODEL = process.env.CF_IMAGE_MODEL || '@cf/leonardo/lucid-origin';
 const { CF_ACCOUNT_ID, CF_API_TOKEN } = process.env;
 
 if (!slug || !prompt) {
