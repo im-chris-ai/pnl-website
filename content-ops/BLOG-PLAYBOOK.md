@@ -83,9 +83,20 @@ Two kinds, different sources:
   Reuse from the library in `content-ops/screenshots.md`; capture new ones only when a post
   needs something not there. No stock.
 
+- **Never stack images back-to-back.** Always put explanatory text between two images;
+  each image should follow the sentence it illustrates.
 - **Format:** cover is `.webp`; screenshots `.webp`/`.png`/`.jpg`.
 - **Location + naming:** `public/images/blog/<slug>/`, named `cover.webp`, `step-1.<ext>`, etc.
 - **Alt text:** describe what the image shows, never "cover image".
+
+## Product CTA (Click to Censor articles)
+For posts about Click to Censor, place the shared CTA twice (keeps every article
+consistent). The post must be `.mdx`.
+- Import it: `import CensorCTA from '../../components/CensorCTA.astro';`
+- Place `<CensorCTA />` **just before the first heading** (after the intro hook).
+- Place `<CensorCTA />` **just before the last heading**.
+- The CTA links to `/click-to-censor` and says "coming soon" until the extension ships;
+  swap the link/label in `src/components/CensorCTA.astro` (one place) when it launches.
 
 ## Definition of done
 - [ ] Frontmatter valid: title, description, date, image.
@@ -95,6 +106,8 @@ Two kinds, different sources:
 - [ ] >= 1 internal link to the app page.
 - [ ] Meta description is unique and under ~155 characters.
 - [ ] Header image present with descriptive alt text.
+- [ ] No two images back-to-back; text separates every image.
+- [ ] (Censor posts) CTA placed before the first heading and before the last heading.
 - [ ] Reads as genuinely useful, not filler.
 
 ## File map

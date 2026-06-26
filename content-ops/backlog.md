@@ -12,7 +12,7 @@ Intent key: INFO = informational (top of funnel), COMP = comparison, HOWTO = tut
 Audience: developers, creators, streamers, support agents, anyone who shares a screen.
 
 ### Cluster: Screen sharing privacy
-- [ ] How to hide sensitive data before sharing your screen (HOWTO)
+- [x] How to hide sensitive data before sharing your screen (HOWTO)
 - [ ] 7 things you accidentally expose on screen-share calls (INFO)
 - [ ] Screen sharing on Zoom without leaking private info (HOWTO)
 - [ ] A pre-demo checklist: what to hide before you present (HOWTO)

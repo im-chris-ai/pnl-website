@@ -253,4 +253,13 @@ const { Content } = await render(entry);
     width: 100% !important;
     height: auto !important;
   }
+
+  /* Embedded blocks (interactive components, CTAs, custom HTML) get vertical
+     breathing room, so a widget never sits flush against the surrounding text.
+     Top-level div/aside/section in rendered content are embedded blocks, not prose. */
+  .post__body > :global(div),
+  .post__body > :global(aside),
+  .post__body > :global(section) {
+    margin-block: var(--space-10);
+  }
 </style>

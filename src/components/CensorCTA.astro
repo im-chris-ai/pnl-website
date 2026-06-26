@@ -1,0 +1,94 @@
+---
+// Call-to-action for Click to Censor articles. Auto-injected top and bottom of posts
+// flagged `app: click-to-censor`. When the extension ships, swap these three values.
+const href = '/click-to-censor';
+const label = 'See how it works';
+const note = 'Coming soon to Chrome';
+---
+
+<aside class="censor-cta">
+  <div class="censor-cta__icon">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0866FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />
+      <path d="M16.681 16.673A8.717 8.717 0 0 1 12 18c-3.6 0-6.6-2-9-6 1.272-2.12 2.712-3.678 4.32-4.674m2.86-1.146A9.055 9.055 0 0 1 12 6c3.6 0 6.6 2 9 6-.666 1.11-1.379 2.067-2.138 2.87" />
+      <path d="M3 3l18 18" />
+    </svg>
+  </div>
+  <span class="censor-cta__pill">{note}</span>
+  <div class="censor-cta__title">Stop gambling with your screen</div>
+  <p class="censor-cta__sub">One click hides anything on any webpage before you share or record. Runs 100% locally, nothing leaves your browser.</p>
+  <a href={href} class="censor-cta__btn">
+    {label}
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+  </a>
+</aside>
+
+<style>
+  .censor-cta {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-10) var(--space-8);
+    text-align: center;
+  }
+
+  .censor-cta__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background-color: rgba(8, 102, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-4);
+  }
+
+  .censor-cta .censor-cta__pill {
+    display: inline-block;
+    font-size: var(--size-label);
+    font-weight: var(--weight-semibold);
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+    color: var(--color-tertiary);
+    background-color: rgba(8, 102, 255, 0.08);
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+
+  .censor-cta .censor-cta__title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: var(--weight-bold);
+    color: var(--color-primary);
+    line-height: 1.15;
+    margin: var(--space-4) 0 var(--space-2);
+  }
+
+  .censor-cta .censor-cta__sub {
+    font-size: 1rem;
+    color: var(--color-secondary);
+    line-height: 1.6;
+    max-width: 46ch;
+    margin: 0 auto var(--space-6);
+  }
+
+  .censor-cta .censor-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--color-tertiary);
+    color: var(--color-on-primary);
+    font-weight: var(--weight-semibold);
+    font-size: 1rem;
+    padding: 12px 22px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+  }
+
+  .censor-cta .censor-cta__btn:hover {
+    background-color: #0654d6;
+  }
+</style>
