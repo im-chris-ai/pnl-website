@@ -75,6 +75,6 @@ Audience: language learners, people building a speaking/reading habit, ESL speak
 
 ## How to use this list
 1. Pick the next unchecked topic (rotate between apps).
-2. Follow `BLOG-PLAYBOOK.md` (template + facts sheet).
+2. Follow `BLOG-PLAYBOOK.md` (structure + facts sheet).
 3. Generate draft, review, add image, publish, check it off.
 4. Refresh the backlog monthly using Search Console data and keyword research.
