@@ -74,14 +74,17 @@ Link to the app page here: [App Name](/app-page).]
 ```
 
 ## Images
-- **Source: real screenshots** of the actual app/extension. No AI art, no stock photos.
-- **Cover:** one per post, landscape ~1200x630 (also used as the social/OG preview).
-  Show the product doing the thing (e.g. a webpage element being blurred).
-- **In-body:** screenshots that illustrate a step; add only where they clarify.
-- **Format:** `.webp` preferred for size; `.png`/`.jpg` are fine. Keep covers reasonably small.
+Two kinds, different sources:
+- **Cover (AI-generated, artistic):** one per post, landscape ~1200x630 (also the
+  social/OG preview). Generate with the `image-gen` skill (Gemini 3.1 Flash Image
+  Preview). A reusable brand style prompt will live here (TBD).
+- **In-body (real screenshots):** real shots of the actual app/extension that
+  illustrate a step. No stock photos. Add only where they clarify.
+
+- **Format:** `.webp` preferred for size; `.png`/`.jpg` are fine. Keep files reasonably small.
 - **Location + naming:** `public/images/blog/<slug>/`, named `cover.<ext>`, `step-1.<ext>`, etc.
-- **Alt text:** describe what the screenshot shows, never "cover image".
-- **Capture:** the owner provides raw captures (share the path or drop them in
+- **Alt text:** describe what the image shows, never "cover image".
+- **Screenshots:** the owner provides raw captures (share the path or drop them in
   `content-ops/incoming/`); the assistant crops, sizes, names, and places them.
 
 ## Definition of done
