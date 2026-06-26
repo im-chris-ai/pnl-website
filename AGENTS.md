@@ -21,7 +21,7 @@ Two workflows, both end with a Markdown file in `src/content/blog/`:
 
 - **Generate from a topic** (write a new post from scratch): follow
   `content-ops/BLOG-PLAYBOOK.md`. Topics live in `content-ops/backlog.md`;
-  app facts (the accuracy guardrail) live in `content-ops/facts/`.
+  app facts (the accuracy guardrail) live in `content-ops/facts-<app>.md`.
 - **Import an uploaded document** (`.docx`, `.pdf`, `.md` → blog post): follow
   `scripts/blog-importer/instructions.md` and run `scripts/blog-importer/importer.py`.
 

@@ -12,7 +12,7 @@ Whenever someone asks to "write / create / draft a blog post" for one of the app
 - The **app** the post supports (Click to Censor or Herald).
 
 ## Hard rules (do not break)
-1. **Accuracy:** only state facts found in the app's facts sheet (`content-ops/facts/<app>.md`).
+1. **Accuracy:** only state facts found in the app's facts sheet (`content-ops/facts-<app>.md`).
    Never invent features, platforms, prices, integrations, stats, or reviews.
 2. **Voice:** concise, no fluff, short sentences, bullets over paragraphs.
    **Never use em-dashes** anywhere. Use commas, periods, colons, or parentheses.
@@ -23,7 +23,7 @@ Whenever someone asks to "write / create / draft a blog post" for one of the app
 
 ## Steps
 1. Confirm topic + app. Pull from `backlog.md` if no topic given.
-2. Open the app facts sheet (`content-ops/facts/<app>.md`) and use the Post structure
+2. Open the app facts sheet (`content-ops/facts-<app>.md`) and use the Post structure
    below.
 3. Write the draft following the structure and the hard rules.
 4. Choose a URL slug: short, lowercase, hyphenated, keyword-first
@@ -85,7 +85,7 @@ Link to the app page here: [App Name](/app-page).]
 
 ## File map
 - Topics: `content-ops/backlog.md`
-- App ground truth: `content-ops/facts/click-to-censor.md`, `content-ops/facts/herald.md`
+- App ground truth: `content-ops/facts-click-to-censor.md`, `content-ops/facts-herald.md`
 - Published posts: `src/content/blog/*.md`
 - Images: `public/images/blog/<slug>/`
 
