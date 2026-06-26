@@ -25,4 +25,5 @@ Two workflows, both end with a Markdown file in `src/content/blog/`:
 - **Import an uploaded document** (`.docx`, `.pdf`, `.md` → blog post): follow
   `scripts/blog-importer/instructions.md` and run `scripts/blog-importer/importer.py`.
 
-Either way, apply the working-style and SEO rules above.
+Either way, apply the working-style and SEO rules above, plus the writing voice in
+`content-ops/voice.md`.

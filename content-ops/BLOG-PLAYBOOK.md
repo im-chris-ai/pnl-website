@@ -14,8 +14,8 @@ Whenever someone asks to "write / create / draft a blog post" for one of the app
 ## Hard rules (do not break)
 1. **Accuracy:** only state facts found in the app's facts sheet (`content-ops/facts-<app>.md`).
    Never invent features, platforms, prices, integrations, stats, or reviews.
-2. **Voice:** concise, no fluff, short sentences, bullets over paragraphs.
-   **Never use em-dashes** anywhere. Use commas, periods, colons, or parentheses.
+2. **Voice:** follow `content-ops/voice.md` (first person, casual, ultra-short
+   paragraphs, punchy). Concise, no fluff. **Never use em-dashes** anywhere.
 3. **One internal link minimum:** link to the app's page (`/click-to-censor` or `/herald`).
 4. **SEO required:** unique title + meta description, one H1, logical heading order,
    alt text on every image.
@@ -85,6 +85,7 @@ Link to the app page here: [App Name](/app-page).]
 
 ## File map
 - Topics: `content-ops/backlog.md`
+- Writing voice: `content-ops/voice.md`
 - App ground truth: `content-ops/facts-click-to-censor.md`, `content-ops/facts-herald.md`
 - Published posts: `src/content/blog/*.md`
 - Images: `public/images/blog/<slug>/`
