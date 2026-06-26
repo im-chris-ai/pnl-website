@@ -1,0 +1,60 @@
+# Blog Playbook
+
+Tool-agnostic instructions for creating a blog post for this site. Any AI assistant
+(or human) should be able to follow this without extra context. No vendor-specific
+steps are required; tool shortcuts are listed at the bottom as optional conveniences.
+
+## When to use this
+Whenever someone asks to "write / create / draft a blog post" for one of the apps.
+
+## Inputs you need
+- The **topic** (if not given, take the next unchecked item from `content-ops/backlog.md`).
+- The **app** the post supports (Click to Censor or Herald).
+
+## Hard rules (do not break)
+1. **Accuracy:** only state facts found in the app's facts sheet (`content-ops/facts/<app>.md`).
+   Never invent features, platforms, prices, integrations, stats, or reviews.
+2. **Voice:** concise, no fluff, short sentences, bullets over paragraphs.
+   **Never use em-dashes** anywhere. Use commas, periods, colons, or parentheses.
+3. **One internal link minimum:** link to the app's page (`/click-to-censor` or `/herald`).
+4. **SEO required:** unique title + meta description, one H1, logical heading order,
+   alt text on every image.
+5. **Quality over volume:** the post must genuinely help the reader. No filler.
+
+## Steps
+1. Confirm topic + app. Pull from `backlog.md` if no topic given.
+2. Open the app facts sheet and the post template (`content-ops/post-template.md`).
+3. Write the draft following the template structure and the hard rules.
+4. Choose a URL slug: short, lowercase, hyphenated, keyword-first
+   (e.g. `hide-data-before-screen-sharing`).
+5. Create the file at `src/content/blog/<slug>.md` with valid frontmatter
+   (see template). `date` is today in `YYYY-MM-DD`.
+6. Add a header image: place it at `public/images/blog/<slug>/cover.<ext>` and set
+   `image:` in frontmatter. Give it descriptive alt text in the body if used inline.
+7. Add at least one internal link to the app page, plus links to related posts where natural.
+8. Self-check against the Definition of done below.
+9. Present the draft for review. Do not publish until approved.
+10. On approval: commit and push to `main` (the site auto-deploys), then check the
+    topic off in `backlog.md`.
+
+## Definition of done
+- [ ] Frontmatter valid: title, description, date, image.
+- [ ] One H1 (the title); H2/H3 in logical order.
+- [ ] Every claim traces to the facts sheet.
+- [ ] No em-dashes. Concise voice.
+- [ ] >= 1 internal link to the app page.
+- [ ] Meta description is unique and under ~155 characters.
+- [ ] Header image present with descriptive alt text.
+- [ ] Reads as genuinely useful, not filler.
+
+## File map
+- Topics: `content-ops/backlog.md`
+- Post structure + frontmatter: `content-ops/post-template.md`
+- App ground truth: `content-ops/facts/click-to-censor.md`, `content-ops/facts/herald.md`
+- Published posts: `src/content/blog/*.md`
+- Images: `public/images/blog/<slug>/`
+
+## Optional tool shortcuts (not required)
+- Claude Code: a thin skill can wrap this file so a request auto-triggers the playbook.
+- Image generation, keyword research, and SEO checks can use whatever tool is available;
+  the rules above are what matters, not the tool.
