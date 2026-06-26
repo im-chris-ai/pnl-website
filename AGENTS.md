@@ -17,6 +17,12 @@ SEO is mandatory on every page:
 - Use semantic HTML and accessible markup.
 
 ## Blog posts
-When asked to write or publish a blog post, follow `content-ops/BLOG-PLAYBOOK.md`.
-Topics live in `content-ops/backlog.md`; app facts (the accuracy guardrail) live in
-`content-ops/facts/`.
+Two workflows, both end with a Markdown file in `src/content/blog/`:
+
+- **Generate from a topic** (write a new post from scratch): follow
+  `content-ops/BLOG-PLAYBOOK.md`. Topics live in `content-ops/backlog.md`;
+  app facts (the accuracy guardrail) live in `content-ops/facts/`.
+- **Import an uploaded document** (`.docx`, `.pdf`, `.md` → blog post): follow
+  `scripts/blog-importer/instructions.md` and run `scripts/blog-importer/importer.py`.
+
+Either way, apply the working-style and SEO rules above.
