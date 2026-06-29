@@ -19,6 +19,10 @@ Path: `/images/blog/shared/click-to-censor/`
 | `finance-dashboard-censored.webp` | Same mock dashboard, balances blacked out and customer names/emails blurred (the "after") | A payments dashboard with the balance and revenue figures blacked out and customer names and emails blurred |
 | `crm-customers.webp` | Mock CRM customer list, real names and emails visible (the "before") | A CRM customer list showing customer names, emails, companies, plans, and revenue |
 | `crm-customers-censored.webp` | Same CRM list, customer names and emails blurred (the "after") | A CRM customer list with every customer name and email blurred |
+| `api-keys-settings.webp` | Mock API keys settings page, secret keys visible (the "before") | A developer API keys settings page with secret keys visible in plain text |
+| `api-keys-settings-censored.webp` | Same page, secret key values blacked out (the "after") | The same API keys page with the secret key values blacked out |
+| `shared-spreadsheet.webp` | Mock compensation spreadsheet, names/emails/salaries visible (the "before") | A shared spreadsheet of staff compensation with names, emails, and salaries visible |
+| `shared-spreadsheet-censored.webp` | Same spreadsheet, names/emails/salaries blurred (the "after") | The same spreadsheet with names, emails, and salaries blurred |
 
 Mock scenes (for capturing new states) live at `src/components/mocks/`, rendered via dev-only
 routes under `src/pages/mock/`. Capture with `npm run shot -- mock/<route> <out-name>`.

@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Page not found" description="Sorry, that page doesn't exist or has moved.">
+  <section class="notfound">
+    <div class="container notfound__inner">
+      <p class="label">Error 404</p>
+      <h1 class="notfound__title">Page not found</h1>
+      <p class="notfound__body">The page you're looking for doesn't exist or has moved.</p>
+      <div class="notfound__actions">
+        <a href="/" class="btn btn-primary">Back home</a>
+        <a href="/blog" class="btn btn-secondary">Read the blog</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .notfound { padding: var(--space-16, 96px) 0; }
+  .notfound__inner { text-align: center; max-width: 560px; }
+  .notfound__title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--color-primary);
+    margin: var(--space-3) 0 var(--space-2);
+  }
+  .notfound__body { color: var(--color-secondary); margin-bottom: var(--space-6); }
+  .notfound__actions { display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap; }
+</style>

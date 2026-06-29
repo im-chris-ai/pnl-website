@@ -88,6 +88,9 @@ Two kinds, different sources:
 
 - **Never stack images back-to-back.** Always put explanatory text between two images;
   each image should follow the sentence it illustrates.
+- **Not every section or list item needs an image.** Spread visuals out (e.g. roughly every
+  other point in a listicle). A few strong, well-placed images beat one per section; too many
+  similar screenshots dilute each other and bury the live demo / real screenshots.
 - **Format:** cover is `.webp`; screenshots `.webp`/`.png`/`.jpg`.
 - **Location + naming:** `public/images/blog/<slug>/`, named `cover.webp`, `step-1.<ext>`, etc.
 - **Alt text:** describe what the image shows, never "cover image".
