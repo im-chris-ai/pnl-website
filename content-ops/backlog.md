@@ -11,6 +11,7 @@ Audience: developers, creators, streamers, support agents, anyone who shares a s
 
 - [x] How to hide sensitive data before sharing your screen
 - [ ] How to share your screen on Zoom without leaking private info
+- [ ] How to hide your email and phone number during a video call
 - [ ] How to prep your screen before a demo (a pre-demo checklist)
 - [ ] How to redact a screenshot the right way (and what not to do)
 - [ ] How to censor a webpage before taking a screenshot
