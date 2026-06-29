@@ -1,0 +1,131 @@
+---
+// Mock CRM / customer admin panel for blog screenshots (point: customer records / PII).
+// Generic, unbranded. `censor` renders the "after" state (names + emails blurred).
+const { censor = false } = Astro.props;
+const rows = [
+  { name: 'Dana Whitfield', email: 'dana@brightpath.io',     company: 'Brightpath',  plan: 'Pro',        mrr: '$290',   status: 'Active',  tone: 'ok' },
+  { name: 'Omar Reyes',     email: 'omar.reyes@nodecraft.com', company: 'Nodecraft',  plan: 'Enterprise', mrr: '$1,200', status: 'Active',  tone: 'ok' },
+  { name: 'Priya Nair',     email: 'priya@lumen.co',         company: 'Lumen',       plan: 'Starter',    mrr: '$49',    status: 'Trial',   tone: 'warn' },
+  { name: 'Tomas Novak',    email: 't.novak@kettle.dev',     company: 'Kettle',      plan: 'Pro',        mrr: '$290',   status: 'Active',  tone: 'ok' },
+  { name: 'Grace Lin',      email: 'grace.lin@verahealth.com', company: 'Vera Health', plan: 'Enterprise', mrr: '$2,400', status: 'Active',  tone: 'ok' },
+  { name: 'Sam Carter',     email: 'sam@driftwood.io',       company: 'Driftwood',   plan: 'Starter',    mrr: '$49',    status: 'Churned', tone: 'mute' },
+];
+---
+
+<div class="crm mock">
+  <!-- Browser chrome -->
+  <div class="crm__bar">
+    <div class="crm__dots"><span></span><span></span><span></span></div>
+    <div class="crm__url">https://app.relayhub.com/customers</div>
+  </div>
+
+  <div class="crm__app">
+    <!-- Sidebar -->
+    <aside class="crm__side">
+      <div class="crm__brand"><span class="crm__logo"></span> RelayHub</div>
+      <nav class="crm__nav">
+        <span class="crm__navitem">Dashboard</span>
+        <span class="crm__navitem crm__navitem--active">Customers</span>
+        <span class="crm__navitem">Deals</span>
+        <span class="crm__navitem">Inbox</span>
+        <span class="crm__navitem">Settings</span>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="crm__main">
+      <header class="crm__head">
+        <div>
+          <h1 class="crm__title">Customers</h1>
+          <p class="crm__sub">1,284 total</p>
+        </div>
+        <div class="crm__actions">
+          <span class="crm__search">Search customers</span>
+          <span class="crm__btn">Add customer</span>
+        </div>
+      </header>
+
+      <table class="crm__table">
+        <thead>
+          <tr><th>Name</th><th>Email</th><th>Company</th><th>Plan</th><th>MRR</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr>
+              <td class={`crm__strong sens ${censor ? 'blur' : ''}`}>{r.name}</td>
+              <td class={`crm__muted sens ${censor ? 'blur' : ''}`}>{r.email}</td>
+              <td>{r.company}</td>
+              <td>{r.plan}</td>
+              <td class="crm__strong">{r.mrr}</td>
+              <td><span class={`crm__pill crm__pill--${r.tone}`}>{r.status}</span></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </main>
+  </div>
+</div>
+
+<style>
+  .crm {
+    font-family: var(--font-sans, system-ui, sans-serif);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(28, 43, 51, 0.10);
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  .crm__bar {
+    display: flex; align-items: center; gap: var(--space-4);
+    background-color: var(--color-neutral);
+    border-bottom: 1px solid var(--color-border);
+    padding: 12px var(--space-4);
+  }
+  .crm__dots { display: flex; gap: 6px; }
+  .crm__dots span { width: 10px; height: 10px; border-radius: 50%; background-color: rgba(28,43,51,0.15); }
+  .crm__url {
+    flex-grow: 1; max-width: 460px; margin-inline: auto;
+    text-align: center; font-family: monospace; font-size: 0.78rem;
+    color: var(--color-secondary); background-color: var(--color-surface);
+    border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding-block: 4px;
+  }
+
+  .crm__app { display: grid; grid-template-columns: 200px 1fr; }
+
+  .crm__side {
+    background-color: var(--color-neutral);
+    border-right: 1px solid var(--color-border);
+    padding: var(--space-6) var(--space-4);
+    display: flex; flex-direction: column; gap: var(--space-6);
+  }
+  .crm__brand { display: flex; align-items: center; gap: 8px; font-weight: var(--weight-bold); color: var(--color-primary); font-size: 1.05rem; }
+  .crm__logo { width: 20px; height: 20px; border-radius: 6px; background: var(--color-tertiary); display: inline-block; }
+  .crm__nav { display: flex; flex-direction: column; gap: 2px; }
+  .crm__navitem { font-size: var(--size-sm); color: var(--color-secondary); padding: 8px 10px; border-radius: var(--radius-sm); }
+  .crm__navitem--active { background-color: rgba(8,102,255,0.08); color: var(--color-tertiary); font-weight: var(--weight-semibold); }
+
+  .crm__main { padding: var(--space-6) var(--space-8); display: flex; flex-direction: column; gap: var(--space-6); }
+  .crm__head { display: flex; justify-content: space-between; align-items: flex-start; }
+  .crm__title { font-size: 1.4rem; font-weight: var(--weight-bold); color: var(--color-primary); margin: 0; }
+  .crm__sub { font-size: var(--size-sm); color: var(--color-secondary); margin: 2px 0 0; }
+  .crm__actions { display: flex; align-items: center; gap: var(--space-3); }
+  .crm__search { font-size: var(--size-sm); color: var(--color-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 7px 12px; background: var(--color-surface); }
+  .crm__btn { font-size: var(--size-sm); font-weight: var(--weight-semibold); color: var(--color-on-primary, #fff); background: var(--color-tertiary); border-radius: var(--radius-sm); padding: 8px 14px; }
+
+  .crm__table { width: 100%; border-collapse: collapse; }
+  .crm__table th { text-align: left; font-size: var(--size-label); text-transform: uppercase; letter-spacing: var(--ls-wide); color: var(--color-secondary); padding: 8px 6px; border-bottom: 1px solid var(--color-border); }
+  .crm__table td { font-size: var(--size-sm); color: var(--color-primary); padding: 11px 6px; border-bottom: 1px solid rgba(28,43,51,0.06); }
+  .crm__strong { font-weight: var(--weight-semibold); }
+  .crm__muted { color: var(--color-secondary); }
+
+  .crm__pill { font-size: var(--size-label); font-weight: var(--weight-semibold); padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: var(--ls-wide); }
+  .crm__pill--ok   { background: rgba(26,157,90,0.12); color: #1a9d5a; }
+  .crm__pill--warn { background: rgba(214,158,8,0.14); color: #b8860b; }
+  .crm__pill--mute { background: rgba(28,43,51,0.08); color: var(--color-secondary); }
+
+  /* Censor treatment (mirror the extension) */
+  .blur { filter: blur(5px); }
+</style>

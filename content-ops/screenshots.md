@@ -15,6 +15,14 @@ Path: `/images/blog/shared/click-to-censor/`
 | `popup-gemini-blackout.webp` | The popup open on a page with one element blacked out | The Click to Censor popup open with one element blacked out |
 | `blackout-wikipedia.webp` | A Wikipedia page with several elements blacked out | A Wikipedia page with several elements blacked out |
 | `blur-and-blackout-drive.webp` | A Google Drive file list with names and owners blurred and blacked out | A Google Drive list with file names and owners hidden by blur and blackout |
+| `finance-dashboard.webp` | Mock payments dashboard, all figures and customer data visible (the "before") | A payments dashboard with account balance, revenue, and customer names and emails all visible |
+| `finance-dashboard-censored.webp` | Same mock dashboard, balances blacked out and customer names/emails blurred (the "after") | A payments dashboard with the balance and revenue figures blacked out and customer names and emails blurred |
+| `crm-customers.webp` | Mock CRM customer list, real names and emails visible (the "before") | A CRM customer list showing customer names, emails, companies, plans, and revenue |
+| `crm-customers-censored.webp` | Same CRM list, customer names and emails blurred (the "after") | A CRM customer list with every customer name and email blurred |
+
+Mock scenes (for capturing new states) live at `src/components/mocks/`, rendered via dev-only
+routes under `src/pages/mock/`. Capture with `npm run shot -- mock/<route> <out-name>`.
+Full process: see `content-ops/MOCKS-PLAYBOOK.md`.
 
 ## Herald
 None yet (app not released; use the mockups on the /herald page if needed).

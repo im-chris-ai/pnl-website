@@ -1,0 +1,42 @@
+---
+// DEV-ONLY screenshot scaffolds. getStaticPaths returns [] in production, so NO mock pages
+// are emitted into the build. In dev they serve at /mock/<scene> for `npm run shot`.
+// Add a new scene by importing it and adding one entry to SCENES below.
+import '../../styles/global.css';
+import FinanceScene from '../../components/mocks/FinanceScene.astro';
+import CrmScene from '../../components/mocks/CrmScene.astro';
+
+const SCENES = {
+  'finance':          { Comp: FinanceScene, censor: false },
+  'finance-censored': { Comp: FinanceScene, censor: true },
+  'crm':              { Comp: CrmScene,     censor: false },
+  'crm-censored':     { Comp: CrmScene,     censor: true },
+};
+
+// getStaticPaths is hoisted into its own scope, so it can't read SCENES above.
+// Keep this list in sync with SCENES' keys when adding a scene.
+export function getStaticPaths() {
+  if (import.meta.env.PROD) return [];
+  return ['finance', 'finance-censored', 'crm', 'crm-censored'].map((scene) => ({ params: { scene } }));
+}
+
+const { scene } = Astro.params;
+const entry = SCENES[scene];
+const Comp = entry.Comp;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Mock: {scene}</title>
+    <style>
+      body { margin: 0; background: var(--color-neutral, #f4f6f8); padding: 32px; }
+    </style>
+  </head>
+  <body>
+    <Comp censor={entry.censor} />
+  </body>
+</html>

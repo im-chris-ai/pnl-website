@@ -82,6 +82,9 @@ Two kinds, different sources:
 - **In-body (real screenshots):** real shots of the app/extension that illustrate a step.
   Reuse from the library in `content-ops/screenshots.md`; capture new ones only when a post
   needs something not there. No stock.
+- **In-body (mock scenes):** for staged scenarios you can't safely screenshot for real
+  (balances, customer data, API keys), build a mock and capture it. Follow
+  `content-ops/MOCKS-PLAYBOOK.md`.
 
 - **Never stack images back-to-back.** Always put explanatory text between two images;
   each image should follow the sentence it illustrates.

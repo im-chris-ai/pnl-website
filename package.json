@@ -8,11 +8,15 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "cover": "node scripts/cover-gen/generate.mjs"
+    "cover": "node scripts/cover-gen/generate.mjs",
+    "shot": "node scripts/shot-gen/capture.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^6.0.3",
     "@astrojs/sitemap": "^3.7.3",
     "astro": "^6.4.8"
+  },
+  "devDependencies": {
+    "playwright": "^1.61.1"
   }
 }
