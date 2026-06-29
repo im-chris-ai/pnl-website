@@ -18,6 +18,12 @@ Audience: developers, creators, streamers, support agents, anyone who shares a s
 - [ ] How to share a bug repro without leaking PII
 - [ ] How to set up a privacy routine before any screen recording
 
+**Screen recording privacy** (from keyword research, 2026-06-29):
+- [ ] How to hide sensitive information during a screen recording
+- [ ] How to blur or hide specific areas while screen recording
+- [ ] How to use a privacy filter when screen recording on a computer
+- [ ] How to hide notifications while screen recording on a desktop
+
 ---
 
 ## Herald  (link: /herald)  — not launched yet, hold until it ships
