@@ -1,9 +1,9 @@
 ---
 // Call-to-action for Click to Censor articles. Auto-injected top and bottom of posts
-// flagged `app: click-to-censor`. When the extension ships, swap these three values.
-const href = '/click-to-censor';
-const label = 'See how it works';
-const note = 'Coming soon to Chrome';
+// flagged `app: click-to-censor`.
+const href = 'https://chromewebstore.google.com/detail/click-to-censor-elements/fheicolihdhjmcbmpglffgcmicngdclj';
+const label = 'Add to Chrome, It\'s Free';
+const note = 'Now on the Chrome Web Store';
 ---
 
 <aside class="censor-cta">
@@ -17,7 +17,7 @@ const note = 'Coming soon to Chrome';
   <span class="censor-cta__pill">{note}</span>
   <div class="censor-cta__title">Stop gambling with your screen</div>
   <p class="censor-cta__sub">One click hides anything on any webpage before you share or record. Runs 100% locally, nothing leaves your browser.</p>
-  <a href={href} class="censor-cta__btn">
+  <a href={href} target="_blank" rel="noopener noreferrer" class="censor-cta__btn">
     {label}
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M5 12h14M13 6l6 6-6 6" />
