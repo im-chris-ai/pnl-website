@@ -1,0 +1,128 @@
+---
+// Mock OS/app "choose what to share" picker for the Zoom post (point: share ONE window,
+// not your whole screen). Generic and unbranded. `censor` is accepted for route parity
+// but unused: this scene has no sensitive on-page data to censor.
+const { censor = false } = Astro.props;
+void censor;
+const tiles = [
+  { key: 'screen', label: 'Entire Screen', risky: true,  kind: 'desktop' },
+  { key: 'app',    label: 'Analytics',     risky: false, kind: 'app', selected: true },
+  { key: 'mail',   label: 'Inbox',         risky: true,  kind: 'mail' },
+  { key: 'chat',   label: 'Messages',      risky: true,  kind: 'chat' },
+];
+---
+
+<div class="shp mock">
+  <header class="shp__head">
+    <span class="shp__title">Choose a window to share</span>
+    <span class="shp__hint">Sharing your whole screen shows everything. Pick one window instead.</span>
+  </header>
+
+  <div class="shp__grid">
+    {tiles.map((t) => (
+      <div class={`shp__tile ${t.selected ? 'is-selected' : ''}`}>
+        <div class={`shp__thumb shp__thumb--${t.kind}`} aria-hidden="true">
+          {t.kind === 'desktop' && (
+            <div class="shp__desk">
+              <span class="shp__win shp__win--a"></span>
+              <span class="shp__win shp__win--b"></span>
+              <span class="shp__win shp__win--c"></span>
+            </div>
+          )}
+          {t.kind === 'app' && (
+            <div class="shp__appwin">
+              <span class="shp__line shp__line--head"></span>
+              <span class="shp__bars"><i></i><i></i><i></i><i></i></span>
+            </div>
+          )}
+          {t.kind === 'mail' && (
+            <div class="shp__list">
+              <span class="shp__row"></span><span class="shp__row"></span>
+              <span class="shp__row"></span><span class="shp__row"></span>
+            </div>
+          )}
+          {t.kind === 'chat' && (
+            <div class="shp__chat">
+              <span class="shp__bub shp__bub--l"></span>
+              <span class="shp__bub shp__bub--r"></span>
+              <span class="shp__bub shp__bub--l"></span>
+            </div>
+          )}
+        </div>
+        <div class="shp__meta">
+          <span class="shp__icon" aria-hidden="true"></span>
+          <span class="shp__label">{t.label}</span>
+          {t.risky && <span class="shp__flag" title="Shows private content">private</span>}
+          {t.selected && <span class="shp__check" aria-hidden="true">✓</span>}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <footer class="shp__foot">
+    <span class="shp__sel">Sharing: <strong>Analytics</strong> window only</span>
+    <button class="shp__btn" type="button">Share</button>
+  </footer>
+</div>
+
+<style>
+  .shp {
+    font-family: var(--font-sans, system-ui, sans-serif);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 40px rgba(28, 43, 51, 0.12);
+    max-width: 760px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .shp__head { padding: var(--space-6) var(--space-6) var(--space-4); border-bottom: 1px solid var(--color-border); display: flex; flex-direction: column; gap: 4px; }
+  .shp__title { font-size: 1.15rem; font-weight: var(--weight-bold); color: var(--color-primary); }
+  .shp__hint { font-size: var(--size-sm); color: var(--color-secondary); }
+
+  .shp__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); padding: var(--space-6); }
+
+  .shp__tile { border: 2px solid var(--color-border); border-radius: var(--radius-md, 10px); overflow: hidden; background-color: var(--color-neutral); }
+  .shp__tile.is-selected { border-color: var(--color-tertiary); box-shadow: 0 0 0 3px rgba(8,102,255,0.15); }
+
+  .shp__thumb { height: 116px; display: flex; align-items: center; justify-content: center; padding: var(--space-4); background-color: var(--color-surface); border-bottom: 1px solid var(--color-border); }
+
+  /* Entire screen: a cluttered desktop of overlapping windows */
+  .shp__desk { position: relative; width: 100%; height: 100%; background: linear-gradient(135deg, #cfe0f5, #e9eef5); border-radius: 6px; }
+  .shp__win { position: absolute; border-radius: 4px; box-shadow: 0 2px 6px rgba(28,43,51,0.15); }
+  .shp__win--a { width: 56%; height: 54%; left: 8%; top: 12%; background: #fff; }
+  .shp__win--b { width: 50%; height: 50%; right: 6%; top: 24%; background: #f3d9d0; }
+  .shp__win--c { width: 40%; height: 38%; left: 26%; bottom: 8%; background: #d6e9d8; }
+
+  /* App window: a tidy dashboard */
+  .shp__appwin { width: 100%; height: 100%; background: #fff; border-radius: 6px; padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+  .shp__line--head { height: 10px; width: 50%; border-radius: 3px; background: var(--color-tertiary); display: block; }
+  .shp__bars { display: flex; align-items: flex-end; gap: 8px; height: 56px; }
+  .shp__bars i { flex: 1; background: rgba(8,102,255,0.25); border-radius: 3px 3px 0 0; }
+  .shp__bars i:nth-child(1){ height: 40%; } .shp__bars i:nth-child(2){ height: 70%; }
+  .shp__bars i:nth-child(3){ height: 55%; } .shp__bars i:nth-child(4){ height: 85%; }
+
+  /* Mail list */
+  .shp__list { width: 100%; height: 100%; background: #fff; border-radius: 6px; padding: 10px; display: flex; flex-direction: column; gap: 8px; justify-content: center; }
+  .shp__row { height: 10px; border-radius: 3px; background: rgba(28,43,51,0.14); }
+  .shp__row:nth-child(odd){ width: 92%; } .shp__row:nth-child(even){ width: 70%; }
+
+  /* Chat bubbles */
+  .shp__chat { width: 100%; height: 100%; background: #fff; border-radius: 6px; padding: 10px; display: flex; flex-direction: column; gap: 8px; justify-content: center; }
+  .shp__bub { height: 16px; border-radius: 8px; }
+  .shp__bub--l { width: 60%; background: rgba(28,43,51,0.12); align-self: flex-start; }
+  .shp__bub--r { width: 50%; background: rgba(8,102,255,0.25); align-self: flex-end; }
+
+  .shp__meta { display: flex; align-items: center; gap: 8px; padding: 10px 12px; }
+  .shp__icon { width: 16px; height: 16px; border-radius: 4px; background: var(--color-tertiary); flex-shrink: 0; }
+  .shp__label { font-size: var(--size-sm); font-weight: var(--weight-semibold); color: var(--color-primary); }
+  .shp__flag { margin-left: auto; font-size: 0.66rem; text-transform: uppercase; letter-spacing: var(--ls-wide); font-weight: var(--weight-bold); color: #b4341f; background: rgba(180,52,31,0.10); padding: 2px 7px; border-radius: 999px; }
+  .shp__check { margin-left: auto; color: var(--color-tertiary); font-weight: var(--weight-bold); }
+  .shp__tile.is-selected .shp__check { margin-left: 0; }
+
+  .shp__foot { display: flex; align-items: center; justify-content: space-between; padding: var(--space-4) var(--space-6); border-top: 1px solid var(--color-border); background-color: var(--color-neutral); }
+  .shp__sel { font-size: var(--size-sm); color: var(--color-secondary); }
+  .shp__sel strong { color: var(--color-primary); }
+  .shp__btn { background-color: var(--color-tertiary); color: #fff; border: 0; font-weight: var(--weight-semibold); font-size: var(--size-sm); padding: 9px 20px; border-radius: var(--radius-md, 8px); cursor: pointer; }
+</style>

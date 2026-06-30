@@ -34,9 +34,22 @@ Whenever someone asks to "write / create / draft a blog post" for one of the app
    step screenshots. Set `image:` in frontmatter and write descriptive alt text.
 7. Add at least one internal link to the app page, plus links to related posts where natural.
 8. Self-check against the Definition of done below.
-9. Present the draft for review. Do not publish until approved.
+9. Present the draft for review, with a screenshot of the rendered page (see "Show the
+   rendered page"). Do not publish until approved.
 10. On approval: commit and push to `main` (the site auto-deploys), then check the
     topic off in `backlog.md`.
+
+## Show the rendered page
+Reviewers (and you) should see the post actually rendered, not just a file path. Capture it:
+```
+npm run dev                                  # if not already running (port 4321)
+npm run shot:page -- blog/<slug> ../<slug>.png   # full-page PNG you can view/attach
+```
+`shot:page` drives Playwright directly (`scripts/shot-gen/page.mjs`) and works on any route
+or URL. It warns if any image on the page is broken. Use this instead of editor/IDE
+preview-screenshot tools, which have hung on capture on this machine.
+(`npm run shot` is different: it captures dev-only `/mock/*` scenes into the asset library,
+clipped to `.mock`. See `MOCKS-PLAYBOOK.md`.)
 
 ## Post structure
 

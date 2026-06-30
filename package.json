@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "cover": "node scripts/cover-gen/generate.mjs",
-    "shot": "node scripts/shot-gen/capture.mjs"
+    "shot": "node scripts/shot-gen/capture.mjs",
+    "shot:page": "node scripts/shot-gen/page.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^6.0.3",

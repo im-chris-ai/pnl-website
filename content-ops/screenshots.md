@@ -23,6 +23,9 @@ Path: `/images/blog/shared/click-to-censor/`
 | `api-keys-settings-censored.webp` | Same page, secret key values blacked out (the "after") | The same API keys page with the secret key values blacked out |
 | `shared-spreadsheet.webp` | Mock compensation spreadsheet, names/emails/salaries visible (the "before") | A shared spreadsheet of staff compensation with names, emails, and salaries visible |
 | `shared-spreadsheet-censored.webp` | Same spreadsheet, names/emails/salaries blurred (the "after") | The same spreadsheet with names, emails, and salaries blurred |
+| `zoom-share-picker.webp` | Mock "choose a window to share" picker; one app window selected, Entire Screen/Inbox/Messages flagged private | A screen-share window picker with one app window selected and the entire-screen, inbox, and messages options flagged as private |
+| `zoom-sharing-frame.webp` | Mock dashboard inside a green "You're sharing this window" frame, balance and customer data visible (the "before") | A dashboard inside a green "you're sharing this window" frame with the account balance, revenue, and customer names and emails all visible |
+| `zoom-sharing-frame-censored.webp` | Same shared-window dashboard, balance blacked out and customer names/emails blurred (the "after") | The same shared-window dashboard with the balance and revenue blacked out and customer names and emails blurred |
 
 Mock scenes (for capturing new states) live at `src/components/mocks/`, rendered via dev-only
 routes under `src/pages/mock/`. Capture with `npm run shot -- mock/<route> <out-name>`.

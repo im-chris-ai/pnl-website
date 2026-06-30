@@ -27,3 +27,9 @@ Two workflows, both end with a Markdown file in `src/content/blog/`:
 
 Either way, apply the working-style and SEO rules above, plus the writing voice in
 `content-ops/voice.md`.
+
+## Showing a rendered page
+To prove a page/post actually renders (for review or a PR), screenshot it with the repo's
+own command: `npm run shot:page -- <route> <out-path>` (full-page Playwright capture; dev
+server must be running). Do NOT rely on editor/IDE preview-screenshot integrations: they have
+hung on capture here. See `content-ops/BLOG-PLAYBOOK.md` ("Show the rendered page").
