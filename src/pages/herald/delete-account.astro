@@ -1,0 +1,152 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const lastUpdated = 'June 30, 2026';
+const contactEmail = 'support@pixanovalabs.com';
+---
+
+<Layout
+  title="Delete your Herald account"
+  description="How to request deletion of your Herald account and the data associated with it."
+>
+  <section class="policy">
+    <div class="container policy__inner">
+      <header class="policy__head">
+        <div class="label">Account</div>
+        <h1 class="policy__title">Delete your Herald account</h1>
+        <p class="policy__updated">Last updated: {lastUpdated}</p>
+      </header>
+
+      <div class="policy__intro card">
+        <p>
+          Herald is developed by <strong>Pixa Nova Labs</strong>. Signing in to Herald is optional.
+          If you signed in with a Google account, this page explains how to delete your account and
+          the data linked to it.
+        </p>
+      </div>
+
+      <div class="policy__body">
+        <h2>How to request deletion</h2>
+        <p>
+          Email <a href={`mailto:${contactEmail}`}>{contactEmail}</a> from the Google account email
+          you use to sign in to Herald, with the subject <strong>"Delete my account"</strong>. So we
+          can find the right account, please send it from that same email address.
+        </p>
+        <p>
+          We will confirm and complete the deletion within <strong>30 days</strong>.
+        </p>
+
+        <h2>What gets deleted</h2>
+        <ul>
+          <li>
+            Your account's <strong>practice history</strong> stored in the cloud (which days you
+            practised, which pages, and your scores) and your account record.
+          </li>
+          <li>
+            The <strong>sign-in information</strong> we received from Google (your name, email, and
+            user ID).
+          </li>
+        </ul>
+
+        <h2>What is already on your device, not our servers</h2>
+        <ul>
+          <li>
+            Your <strong>books and their text, local scores, and settings</strong> are stored only
+            on your phone. They are removed when you clear the app's data or uninstall the app, and
+            are not held on our servers.
+          </li>
+          <li>
+            The app's <strong>anonymous daily-usage counter</strong> is not tied to your account and
+            automatically expires after about two days.
+          </li>
+        </ul>
+
+        <p>
+          If you have any questions, contact us at
+          <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .policy {
+    padding-block: var(--space-16) var(--space-20);
+    background-color: var(--color-surface);
+  }
+
+  .policy__inner {
+    max-width: 760px;
+  }
+
+  .policy__head {
+    margin-bottom: var(--space-8);
+  }
+
+  .policy__title {
+    font-family: var(--font-serif);
+    font-size: var(--size-h1);
+    font-weight: var(--weight-bold);
+    color: var(--color-primary);
+    line-height: var(--lh-heading);
+    margin-top: var(--space-2);
+  }
+
+  .policy__updated {
+    color: var(--color-secondary);
+    font-size: var(--size-sm);
+    margin-top: var(--space-3);
+  }
+
+  .policy__intro {
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    background-color: var(--color-neutral);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-10);
+    line-height: var(--lh-body);
+  }
+
+  .policy__body h2 {
+    font-family: var(--font-serif);
+    font-size: var(--size-h2);
+    font-weight: var(--weight-semibold);
+    color: var(--color-primary);
+    margin-top: var(--space-10);
+    margin-bottom: var(--space-4);
+  }
+
+  .policy__body p {
+    margin-bottom: var(--space-4);
+    line-height: var(--lh-body);
+    color: var(--color-primary);
+  }
+
+  .policy__body ul {
+    list-style: disc;
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .policy__body li {
+    line-height: var(--lh-body);
+    color: var(--color-primary);
+  }
+
+  .policy__body a {
+    color: var(--color-tertiary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .policy__body a:hover {
+    opacity: 0.8;
+  }
+</style>
