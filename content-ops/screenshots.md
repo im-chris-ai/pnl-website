@@ -26,6 +26,8 @@ Path: `/images/blog/shared/click-to-censor/`
 | `zoom-share-picker.webp` | Mock "choose a window to share" picker; one app window selected, Entire Screen/Inbox/Messages flagged private | A screen-share window picker with one app window selected and the entire-screen, inbox, and messages options flagged as private |
 | `zoom-sharing-frame.webp` | Mock dashboard inside a green "You're sharing this window" frame, balance and customer data visible (the "before") | A dashboard inside a green "you're sharing this window" frame with the account balance, revenue, and customer names and emails all visible |
 | `zoom-sharing-frame-censored.webp` | Same shared-window dashboard, balance blacked out and customer names/emails blurred (the "after") | The same shared-window dashboard with the balance and revenue blacked out and customer names and emails blurred |
+| `account-profile.webp` | Mock personal account/profile page, name/email/phone/address visible (the "before") | A personal account profile page showing the full name, email address, phone number, and mailing address in plain text |
+| `account-profile-censored.webp` | Same profile page, email and phone blurred, name/address left visible (the "after") | The same account profile page with the email address and phone number blurred while the name and address remain visible |
 
 Mock scenes (for capturing new states) live at `src/components/mocks/`, rendered via dev-only
 routes under `src/pages/mock/`. Capture with `npm run shot -- mock/<route> <out-name>`.

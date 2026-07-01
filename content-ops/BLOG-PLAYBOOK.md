@@ -87,7 +87,14 @@ Link to the app page here: [App Name](/app-page).]
 ```
 
 ## Images
-Two kinds, different sources:
+**Pick the image for the point first, then the source.** Decide what the image must
+*prove* (e.g. "this post is about hiding an email + phone, so show an email + phone being
+hidden"), then choose where it comes from. If the library (`content-ops/screenshots.md`)
+already has a shot of *that exact scenario*, reuse it. If not, build a mock and capture it
+(`MOCKS-PLAYBOOK.md`). Do not settle for an approximate library shot just because it's faster;
+a near-miss image on the post's core scenario is the wrong image.
+
+Three kinds, different sources:
 - **Cover (AI-generated):** one per post, 1200x630 (also the social/OG preview).
   Compose the brand style from `content-ops/cover-style.md` + the post subject, then run
   `npm run cover -- <slug> "<prompt>"` (Cloudflare Workers AI). Output lands at
@@ -125,6 +132,7 @@ consistent). The post must be `.mdx`.
 - [ ] >= 1 internal link to the app page.
 - [ ] Meta description is unique and under ~155 characters.
 - [ ] Header image present with descriptive alt text.
+- [ ] The post's core scenario is shown by at least one screenshot of *that scenario* (built a mock if the library lacked it), not an approximate stand-in.
 - [ ] No two images back-to-back; text separates every image.
 - [ ] (Censor posts) CTA placed before the first heading and before the last heading.
 - [ ] Reads as genuinely useful, not filler.

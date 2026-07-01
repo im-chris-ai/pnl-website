@@ -9,6 +9,7 @@ import ApiKeysScene from '../../components/mocks/ApiKeysScene.astro';
 import SheetScene from '../../components/mocks/SheetScene.astro';
 import SharePickerScene from '../../components/mocks/SharePickerScene.astro';
 import SharingFrameScene from '../../components/mocks/SharingFrameScene.astro';
+import AccountScene from '../../components/mocks/AccountScene.astro';
 
 const SCENES = {
   'finance':          { Comp: FinanceScene, censor: false },
@@ -22,6 +23,8 @@ const SCENES = {
   'share-picker':     { Comp: SharePickerScene,  censor: false },
   'sharing-frame':          { Comp: SharingFrameScene, censor: false },
   'sharing-frame-censored': { Comp: SharingFrameScene, censor: true },
+  'account':                { Comp: AccountScene, censor: false },
+  'account-censored':       { Comp: AccountScene, censor: true },
 };
 
 // getStaticPaths is hoisted into its own scope, so it can't read SCENES above.
@@ -30,7 +33,8 @@ export function getStaticPaths() {
   if (import.meta.env.PROD) return [];
   return ['finance', 'finance-censored', 'crm', 'crm-censored',
           'apikeys', 'apikeys-censored', 'sheet', 'sheet-censored',
-          'share-picker', 'sharing-frame', 'sharing-frame-censored'].map((scene) => ({ params: { scene } }));
+          'share-picker', 'sharing-frame', 'sharing-frame-censored',
+          'account', 'account-censored'].map((scene) => ({ params: { scene } }));
 }
 
 const { scene } = Astro.params;
